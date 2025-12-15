@@ -23,5 +23,140 @@
   <script src="js/main.js" defer></script>
 </head>
 <body data-theme="dark">
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="nav__logo">explicit</a>
+
+      <ul class="nav__links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+
+      <button class="nav__theme-toggle" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav__mobile-overlay">
+      <ul class="nav__mobile-links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__headline">You made a great product. Congratulations. No one gives a shit.</h1>
+        <div class="hero__subtext">
+          <p>100,000 startups die every year.</p>
+          <p>The world is littered with the carcasses of those who couldn't get people to care.</p>
+          <p>Don't be one of them.<span class="cursor"></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee Section -->
+    <a href="/graveyard.html" class="marquee-link">
+      <div class="marquee">
+        <div class="marquee__track">
+          <span class="marquee__content">XEROX ALTO — GENERAL MAGIC — SEGWAY — GOOGLE WAVE — VINE — PALM PRE — KODAK — BETAMAX — DELOREAN — FRIENDSTER — SONY MINIDISC — APPLE NEWTON — IRIDIUM — WINDOWS PHONE —&nbsp;</span>
+          <span class="marquee__content">XEROX ALTO — GENERAL MAGIC — SEGWAY — GOOGLE WAVE — VINE — PALM PRE — KODAK — BETAMAX — DELOREAN — FRIENDSTER — SONY MINIDISC — APPLE NEWTON — IRIDIUM — WINDOWS PHONE —&nbsp;</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Bridge Section -->
+    <section class="bridge">
+      <div class="bridge__content">
+        <p class="bridge__text">Products <span class="easter-egg-die">die</span> every day. Great stories live forever.</p>
+        <p class="bridge__text">And every story can be great if told with care &amp; creativity.</p>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+      <div class="solution__content">
+        <p>Explicit is a creative studio for founders, VCs &amp; companies who refuse to be ignored.</p>
+        <p>We could write a paragraph full of buzzwords on how we'd do this (align/position/stakeholders/communication etc).</p>
+        <p>But simply put, we make sure people give a shit about your company.</p>
+        <p class="solution__services">Strategy. Identity. Digital. Content. Activations. Whatever it takes.</p>
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work">
+      <h2 class="work__header">Work</h2>
+      <div class="work__grid">
+        <a href="/work.html" class="work__card">
+          <div class="work__card-image"></div>
+          <h3 class="work__card-title">Project Alpha</h3>
+          <p class="work__card-description">Brand identity and digital experience for a Series A fintech startup.</p>
+        </a>
+        <a href="/work.html" class="work__card">
+          <div class="work__card-image"></div>
+          <h3 class="work__card-title">Project Beta</h3>
+          <p class="work__card-description">Full rebrand and go-to-market strategy for an enterprise SaaS company.</p>
+        </a>
+        <a href="/work.html" class="work__card">
+          <div class="work__card-image"></div>
+          <h3 class="work__card-title">Project Gamma</h3>
+          <p class="work__card-description">Launch campaign and content strategy for a consumer health brand.</p>
+        </a>
+        <a href="/work.html" class="work__card">
+          <div class="work__card-image"></div>
+          <h3 class="work__card-title">Project Delta</h3>
+          <p class="work__card-description">Website redesign and brand refresh for a venture capital firm.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta__content">
+        <p class="cta__text">Tell your story better. Make something wonderful.<span class="cursor"></span></p>
+        <a href="/contact.html" class="cta__button">Get in touch</a>
+        <p class="cta__email">or email us at <a href="mailto:hello@explicit.studio">hello@explicit.studio</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__content">
+      <div class="footer__info">
+        <p class="footer__copyright">&copy; 2025 Explicit</p>
+        <a href="mailto:hello@explicit.studio" class="footer__email">hello@explicit.studio</a>
+      </div>
+      <nav class="footer__nav">
+        <a href="/work.html">Work</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/graveyard.html">Graveyard</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
 </body>
 </html>
