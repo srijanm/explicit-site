@@ -1,1 +1,150 @@
 // Explicit site scripts
+
+// ========================================
+// CONSOLE EASTER EGG
+// ========================================
+console.log("%c> Hey, you're poking around.", "color: #B8FDA1; font-family: monospace;");
+console.log("%c> We like that.", "color: #B8FDA1; font-family: monospace;");
+console.log("%c> If you're building something interesting: hello@explicit.studio", "color: #B8FDA1; font-family: monospace;");
+
+// ========================================
+// THEME TOGGLE
+// ========================================
+
+const STORAGE_KEY = 'explicit-theme';
+
+/**
+ * Get preferred theme based on localStorage or system preference
+ * @returns {'dark' | 'light'}
+ */
+function getPreferredTheme() {
+  // Check localStorage first
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored === 'dark' || stored === 'light') {
+    return stored;
+  }
+
+  // Check system preference
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    return 'light';
+  }
+
+  // Default to dark
+  return 'dark';
+}
+
+/**
+ * Apply theme to document and update UI
+ * @param {'dark' | 'light'} theme
+ */
+function setTheme(theme) {
+  // Set data-theme attribute on html element
+  document.documentElement.setAttribute('data-theme', theme);
+
+  // Update all toggle button texts
+  const toggleLabels = document.querySelectorAll('.theme-label');
+  toggleLabels.forEach(label => {
+    label.textContent = theme;
+  });
+
+  // Save to localStorage
+  localStorage.setItem(STORAGE_KEY, theme);
+}
+
+/**
+ * Toggle between dark and light themes with subtle flicker effect
+ */
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  // Subtle flicker effect
+  document.body.style.opacity = '0.95';
+  setTimeout(() => {
+    setTheme(newTheme);
+    document.body.style.opacity = '1';
+  }, 50);
+}
+
+/**
+ * Initialize theme on page load
+ */
+function initTheme() {
+  const theme = getPreferredTheme();
+  setTheme(theme);
+
+  // Set up toggle button click handlers
+  const toggleButtons = document.querySelectorAll('.nav__theme-toggle');
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', toggleTheme);
+  });
+
+  // Listen for system preference changes
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      // Only update if user hasn't manually set a preference
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  }
+}
+
+// ========================================
+// NAVIGATION
+// ========================================
+
+/**
+ * Handle header scroll state
+ */
+function initHeaderScroll() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('header--scrolled');
+    } else {
+      header.classList.remove('header--scrolled');
+    }
+  });
+}
+
+/**
+ * Handle mobile navigation toggle
+ */
+function initMobileNav() {
+  const hamburger = document.querySelector('.nav__hamburger');
+  const overlay = document.querySelector('.nav__mobile-overlay');
+
+  if (!hamburger || !overlay) return;
+
+  hamburger.addEventListener('click', () => {
+    const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !isExpanded);
+    overlay.classList.toggle('active');
+
+    // Prevent body scroll when overlay is open
+    document.body.style.overflow = isExpanded ? '' : 'hidden';
+  });
+
+  // Close overlay when clicking a link
+  const overlayLinks = overlay.querySelectorAll('a');
+  overlayLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.setAttribute('aria-expanded', 'false');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+// ========================================
+// INITIALIZE
+// ========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  initHeaderScroll();
+  initMobileNav();
+});
