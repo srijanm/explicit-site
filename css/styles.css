@@ -318,12 +318,12 @@ button:focus-visible {
    HERO SECTION
    ======================================== */
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   align-items: flex-start;
   padding: var(--space-xl) var(--container-padding);
   padding-top: calc(var(--space-xl) + 80px);
-  padding-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
   max-width: var(--container-max);
   margin: 0 auto;
 }
