@@ -137,6 +137,15 @@ function initMobileNav() {
       document.body.style.overflow = '';
     });
   });
+
+  // Close overlay on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) {
+      hamburger.setAttribute('aria-expanded', 'false');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
 }
 
 // ========================================
