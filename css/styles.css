@@ -494,7 +494,7 @@ button:focus-visible {
    ======================================== */
 .bridge {
   padding: var(--space-lg) var(--space-md);
-  padding-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
 }
 
 .bridge__content {
@@ -535,7 +535,7 @@ button:focus-visible {
    SOLUTION SECTION
    ======================================== */
 .solution {
-  padding: var(--space-sm) var(--space-md);
+  padding: 0 var(--space-md);
   padding-bottom: var(--space-md);
 }
 
