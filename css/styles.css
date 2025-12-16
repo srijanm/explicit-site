@@ -449,6 +449,11 @@ button:focus-visible {
   animation-play-state: paused;
 }
 
+/* Spaced marquee variant */
+.marquee-link--spaced {
+  margin: var(--space-lg) 0;
+}
+
 /* Marquee with images */
 .marquee--with-images {
   padding: var(--space-md) 0;
@@ -578,6 +583,14 @@ button:focus-visible {
   margin-top: var(--space-md);
 }
 
+/* Services Section (Homepage) */
+.services-section {
+  padding: var(--space-md) var(--container-padding);
+  padding-bottom: var(--space-md);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
 /* Services List */
 .services__intro {
   max-width: 800px;
@@ -586,7 +599,6 @@ button:focus-visible {
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1.3;
-  margin-top: var(--space-lg);
   margin-bottom: var(--space-md);
 }
 
