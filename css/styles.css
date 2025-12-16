@@ -572,10 +572,10 @@ button:focus-visible {
 .services__intro {
   max-width: 800px;
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 600;
   letter-spacing: -0.04em;
-  color: var(--text-secondary);
+  line-height: 1.3;
   margin-top: var(--space-lg);
   margin-bottom: var(--space-md);
 }
