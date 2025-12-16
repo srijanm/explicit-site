@@ -359,7 +359,7 @@ button:focus-visible {
 }
 
 .hero__subtext p {
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
 }
 
 .hero__subtext p:last-child {
@@ -431,6 +431,11 @@ button:focus-visible {
 
 .marquee-link:hover .marquee__content {
   color: var(--accent);
+}
+
+.marquee-link:hover .marquee__track,
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
 }
 
 /* Marquee with images */
@@ -559,6 +564,48 @@ button:focus-visible {
 
 .solution__headline--emphasis {
   margin-top: var(--space-md);
+}
+
+/* Services List */
+.services {
+  max-width: 800px;
+  margin: var(--space-lg) auto 0;
+  text-align: left;
+}
+
+.services__item {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  align-items: baseline;
+}
+
+.services__title {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.services__description {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .services__item {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .services__title {
+    min-width: auto;
+  }
 }
 
 .highlight--large {
@@ -790,4 +837,130 @@ button:focus-visible {
 
 .footer__nav a:hover {
   color: var(--text-primary);
+}
+
+
+/* ========================================
+   EASTER EGG: XP ERROR MODAL
+   ======================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background: linear-gradient(180deg, #0054E3 0%, #0047C2 3%, #0047C2 97%, #003399 100%);
+  border: 2px solid #0054E3;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 90%;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.modal__header {
+  background: linear-gradient(180deg, #0058E6 0%, #3A8CF4 8%, #0553D4 92%, #0344B0 100%);
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal__icon {
+  font-size: 1rem;
+}
+
+.modal__title {
+  color: white;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.modal__body {
+  background: #ECE9D8;
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.modal__message {
+  font-size: 1rem;
+  color: #000;
+  margin-bottom: var(--space-xs);
+  font-weight: 500;
+}
+
+.modal__submessage {
+  font-size: 0.875rem;
+  color: #444;
+}
+
+.modal__footer {
+  background: #ECE9D8;
+  padding: 0 var(--space-md) var(--space-md);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.modal__btn {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 0.75rem;
+  padding: 6px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.modal__btn--ok {
+  background: linear-gradient(180deg, #fff 0%, #ECE9D8 100%);
+  border: 1px solid #003C74;
+  color: #000;
+  box-shadow: inset 0 1px 0 #fff;
+}
+
+.modal__btn--ok:hover {
+  background: linear-gradient(180deg, #fff 0%, #D4D0C8 100%);
+}
+
+.modal__btn--help {
+  background: linear-gradient(180deg, #fff 0%, #ECE9D8 100%);
+  border: 1px solid #003C74;
+  color: #000;
+  box-shadow: inset 0 1px 0 #fff;
+}
+
+.modal__btn--help:hover {
+  background: linear-gradient(180deg, #fff 0%, #D4D0C8 100%);
+}
+
+.modal__btn:focus {
+  outline: 1px dotted #000;
+  outline-offset: -4px;
+}
+
+/* Easter egg trigger */
+.easter-egg-die {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.easter-egg-die:hover {
+  color: var(--accent);
 }

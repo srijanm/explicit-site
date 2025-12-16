@@ -24,6 +24,13 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
+<!--
+============================================
+You're reading the source code.
+You're definitely our kind of client.
+Say hi: hello@explicit.studio
+============================================
+-->
 
   <!-- Navigation -->
   <header class="header">
@@ -74,9 +81,9 @@
         </h1>
         <p class="hero__highlight"><span class="highlight">No one gives a shit.</span></p>
         <div class="hero__subtext">
-          <p>100,000 startups die every year.</p>
-          <p>The world is littered with the carcasses of those who couldn't get people to care.</p>
-          <p>Don't be one of them.<span class="cursor"></span></p>
+          <p>Become the company people <span class="highlight">give a shit</span> about.</p>
+          <p>The last 10% of a product is the story you haven't written yet.</p>
+          <p>We help you write your story, <span class="highlight">explicitly</span> and thread it everywhere.<span class="cursor"></span></p>
         </div>
       </div>
     </section>
@@ -205,7 +212,7 @@
     <!-- Bridge Section -->
     <section class="bridge">
       <div class="bridge__content">
-        <p class="bridge__text">Products die every day.<br><span class="highlight">Stories live forever.</span></p>
+        <p class="bridge__text">Products <span class="easter-egg-die">die</span> every day.<br><span class="highlight">Stories live forever.</span></p>
         <p class="bridge__text">Explicit is a creative studio helping courageous <span class="highlight">founders &amp; VCs</span> tell their story better &amp; get the word out.</p>
       </div>
     </section>
@@ -213,9 +220,34 @@
     <!-- Solution Section -->
     <section class="solution">
       <div class="solution__content">
-        <p class="solution__headline">We could write a word salad full of <span class="highlight">buzzwords</span> on what we do &amp; it'd go something like this<br><em class="solution__quote">"We leverage purpose-driven positioning to strategically align authentic brand narratives with stakeholder touchpoints across a holistic, full-funnel engagement ecosystem."</em></p>
+        <p class="solution__headline">Here's a word salad full of <span class="highlight">buzzwords</span> explaining what we do<br><em class="solution__quote">"We leverage purpose-driven positioning to strategically align authentic brand narratives with stakeholder touchpoints across a holistic, full-funnel engagement ecosystem."</em></p>
         <p class="solution__headline solution__headline--emphasis">But simply put, we make sure people <span class="highlight highlight--large">give a shit</span> about your company.</p>
-        <p class="solution__headline solution__headline--emphasis">Strategy. Identity. Digital. Content. Activations.<br>Whatever it takes.</p>
+      </div>
+      <div class="services">
+        <div class="services__item">
+          <h3 class="services__title"><span class="highlight">STRATEGY</span></h3>
+          <p class="services__description">Who you are &amp; why people should care</p>
+        </div>
+        <div class="services__item">
+          <h3 class="services__title"><span class="highlight">IDENTITY</span></h3>
+          <p class="services__description">How your company looks &amp; speaks</p>
+        </div>
+        <div class="services__item">
+          <h3 class="services__title"><span class="highlight">DIGITAL</span></h3>
+          <p class="services__description">Web experiences designed &amp; developed</p>
+        </div>
+        <div class="services__item">
+          <h3 class="services__title"><span class="highlight">CONTENT</span></h3>
+          <p class="services__description">Platform specific content strategy, content retainers, bespoke IP development for podcasts &amp; newsletters</p>
+        </div>
+        <div class="services__item">
+          <h3 class="services__title"><span class="highlight">ACTIVATIONS</span></h3>
+          <p class="services__description">Make your product famous &amp; take over the internet</p>
+        </div>
+        <div class="services__item">
+          <h3 class="services__title"><span class="highlight">FOUNDER BRAND &amp; STORY</span></h3>
+          <p class="services__description">A cohesive brand linked to your company's story helping you raise money, build partnerships &amp; stay relevant in your niche</p>
+        </div>
       </div>
     </section>
 
@@ -282,6 +314,29 @@
       </nav>
     </div>
   </footer>
+
+  <!-- Easter Egg: XP Error Modal -->
+  <div class="modal-overlay" id="errorModal">
+    <div class="modal">
+      <div class="modal__header">
+        <span class="modal__icon">⚠️</span>
+        <span class="modal__title">FATAL ERROR</span>
+      </div>
+      <div class="modal__body">
+        <p class="modal__message">Your startup has crashed.</p>
+        <p class="modal__submessage">Reason: Nobody cared.</p>
+      </div>
+      <div class="modal__footer">
+        <button class="modal__btn modal__btn--ok" id="modalOk">OK</button>
+        <button class="modal__btn modal__btn--help" id="modalHelp">Get Help</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Easter Egg: Error Sound -->
+  <audio id="errorSound" preload="auto">
+    <source src="assets/sounds/error.mp3" type="audio/mpeg">
+  </audio>
 
 </body>
 </html>

@@ -140,6 +140,70 @@ function initMobileNav() {
 }
 
 // ========================================
+// EASTER EGG: XP ERROR MODAL
+// ========================================
+
+/**
+ * Initialize the "die" easter egg modal
+ */
+function initEasterEggModal() {
+  const trigger = document.querySelector('.easter-egg-die');
+  const modal = document.getElementById('errorModal');
+  const okBtn = document.getElementById('modalOk');
+  const helpBtn = document.getElementById('modalHelp');
+  const errorSound = document.getElementById('errorSound');
+
+  if (!trigger || !modal) return;
+
+  // Open modal on click
+  trigger.addEventListener('click', () => {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Play error sound
+    if (errorSound) {
+      errorSound.currentTime = 0;
+      errorSound.play().catch(() => {
+        // Audio play failed (autoplay policy), ignore silently
+      });
+    }
+  });
+
+  // Close modal functions
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // OK button closes modal
+  if (okBtn) {
+    okBtn.addEventListener('click', closeModal);
+  }
+
+  // Help button closes modal and opens email
+  if (helpBtn) {
+    helpBtn.addEventListener('click', () => {
+      closeModal();
+      window.location.href = 'mailto:hello@explicit.studio';
+    });
+  }
+
+  // Click on overlay closes modal
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Escape key closes modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+}
+
+// ========================================
 // INITIALIZE
 // ========================================
 
@@ -147,4 +211,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initHeaderScroll();
   initMobileNav();
+  initEasterEggModal();
 });
