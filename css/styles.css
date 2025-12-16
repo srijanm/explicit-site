@@ -537,7 +537,7 @@ button:focus-visible {
    SOLUTION SECTION
    ======================================== */
 .solution {
-  padding: var(--space-md) var(--space-md);
+  padding: var(--space-sm) var(--space-md);
   padding-bottom: var(--space-md);
 }
 
