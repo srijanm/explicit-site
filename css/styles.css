@@ -499,8 +499,6 @@ button:focus-visible {
 
 .bridge__content {
   max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
 }
 
 .bridge__text {
@@ -543,8 +541,6 @@ button:focus-visible {
 
 .solution__content {
   max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
 }
 
 .solution__content p {
@@ -706,12 +702,10 @@ button:focus-visible {
    ======================================== */
 .cta {
   padding: var(--space-lg) var(--space-md);
-  text-align: center;
 }
 
 .cta__content {
   max-width: 800px;
-  margin: 0 auto;
 }
 
 .cta__text {
