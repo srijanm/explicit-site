@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Graveyard — Explicit</title>
-  <meta name="description" content="Explicit is a creative studio for founders, VCs & companies who refuse to be ignored.">
+  <title>The Graveyard — Products That Died in Obscurity | Explicit</title>
+  <meta name="description" content="A memorial for innovative products that failed because nobody knew they existed. Great products. No story. Dead.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Graveyard — Explicit">
-  <meta property="og:description" content="Explicit is a creative studio for founders, VCs & companies who refuse to be ignored.">
+  <meta property="og:title" content="The Graveyard — Products That Died in Obscurity">
+  <meta property="og:description" content="A memorial for innovative products that failed because nobody knew they existed.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://explicit.site/graveyard">
+  <meta property="og:url" content="https://explicit.site/graveyard.html">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -22,6 +23,264 @@
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
 </head>
-<body data-theme="dark">
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="nav__logo">explicit</a>
+
+      <ul class="nav__links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html" class="active">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+
+      <button class="nav__theme-toggle" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav__mobile-overlay">
+      <ul class="nav__mobile-links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="graveyard-hero">
+      <div class="graveyard-hero__content animate-on-load">
+        <h1 class="graveyard-hero__title">The Graveyard</h1>
+        <p class="graveyard-hero__subtitle">Great products. No story. <span class="highlight">Dead.</span></p>
+        <p class="graveyard-hero__intro">These products were innovative, groundbreaking, ahead of their time. They all failed because nobody knew they existed.</p>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="graveyard-grid">
+      <div class="graveyard-grid__container">
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Xerox Alto</h3>
+          <span class="grave-card__year">1973</span>
+          <p class="grave-card__description">First GUI computer</p>
+          <p class="grave-card__epitaph">"Apple saw it. Xerox didn't tell the story."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">General Magic</h3>
+          <span class="grave-card__year">1994</span>
+          <p class="grave-card__description">Smartphone before smartphones</p>
+          <p class="grave-card__epitaph">"A decade too early. A story too quiet."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">NeXT Computer</h3>
+          <span class="grave-card__year">1988</span>
+          <p class="grave-card__description">Foundation of macOS</p>
+          <p class="grave-card__epitaph">"Steve Jobs couldn't sell it. Apple bought it."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Xanadu</h3>
+          <span class="grave-card__year">1960s</span>
+          <p class="grave-card__description">The web before the web</p>
+          <p class="grave-card__epitaph">"30 years building. Tim Berners-Lee shipped faster."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">VisiCalc</h3>
+          <span class="grave-card__year">1979</span>
+          <p class="grave-card__description">First spreadsheet</p>
+          <p class="grave-card__epitaph">"Invented the killer app. Lotus took the credit."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Sony Betamax</h3>
+          <span class="grave-card__year">1975</span>
+          <p class="grave-card__description">Superior to VHS</p>
+          <p class="grave-card__epitaph">"Better quality. Worse marketing."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">LaserDisc</h3>
+          <span class="grave-card__year">1978</span>
+          <p class="grave-card__description">Better than VHS</p>
+          <p class="grave-card__epitaph">"Couldn't explain why consumers should care."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Sony MiniDisc</h3>
+          <span class="grave-card__year">1992</span>
+          <p class="grave-card__description">Better than CDs</p>
+          <p class="grave-card__epitaph">"Japan loved it. The West never heard of it."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Sega Dreamcast</h3>
+          <span class="grave-card__year">1999</span>
+          <p class="grave-card__description">First online console</p>
+          <p class="grave-card__epitaph">"PlayStation 2's hype machine won."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Microsoft Zune</h3>
+          <span class="grave-card__year">2006</span>
+          <p class="grave-card__description">iPod competitor</p>
+          <p class="grave-card__epitaph">"Good product. 'Squirting' songs."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Apple Newton</h3>
+          <span class="grave-card__year">1993</span>
+          <p class="grave-card__description">First mainstream PDA</p>
+          <p class="grave-card__epitaph">"Ahead of its time. Became a punchline."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Palm Pre</h3>
+          <span class="grave-card__year">2009</span>
+          <p class="grave-card__description">Better than early iPhone</p>
+          <p class="grave-card__epitaph">"'Like a deck of cards' wasn't a story."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Windows Phone</h3>
+          <span class="grave-card__year">2010</span>
+          <p class="grave-card__description">Innovative interface</p>
+          <p class="grave-card__epitaph">"No apps, no story, no chance."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Essential Phone</h3>
+          <span class="grave-card__year">2017</span>
+          <p class="grave-card__description">By Android's creator</p>
+          <p class="grave-card__epitaph">"Beautiful. No marketing. Dead."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Iridium</h3>
+          <span class="grave-card__year">1998</span>
+          <p class="grave-card__description">Global satellite phone</p>
+          <p class="grave-card__epitaph">"77 satellites. Couldn't explain who needed it."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Friendster</h3>
+          <span class="grave-card__year">2002</span>
+          <p class="grave-card__description">First social network</p>
+          <p class="grave-card__epitaph">"Had 3 million users. MySpace told a better story."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Google Wave</h3>
+          <span class="grave-card__year">2009</span>
+          <p class="grave-card__description">Real-time collaboration</p>
+          <p class="grave-card__epitaph">"Google couldn't explain it in one sentence."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Vine</h3>
+          <span class="grave-card__year">2013</span>
+          <p class="grave-card__description">TikTok before TikTok</p>
+          <p class="grave-card__epitaph">"Twitter killed it. TikTok made billions."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">AltaVista</h3>
+          <span class="grave-card__year">1995</span>
+          <p class="grave-card__description">First real search engine</p>
+          <p class="grave-card__epitaph">"Google said 'just search.' AltaVista said nothing."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Napster</h3>
+          <span class="grave-card__year">1999</span>
+          <p class="grave-card__description">Spotify before Spotify</p>
+          <p class="grave-card__epitaph">"Sued to death. Couldn't reframe the story."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Sinclair C5</h3>
+          <span class="grave-card__year">1985</span>
+          <p class="grave-card__description">Early electric vehicle</p>
+          <p class="grave-card__epitaph">"Electric transport 35 years early. Looked like a toy."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">DeLorean</h3>
+          <span class="grave-card__year">1981</span>
+          <p class="grave-card__description">Iconic design</p>
+          <p class="grave-card__epitaph">"Only famous because of a movie."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Fisker Karma</h3>
+          <span class="grave-card__year">2011</span>
+          <p class="grave-card__description">Tesla before Tesla won</p>
+          <p class="grave-card__epitaph">"Beautiful. No counter-narrative to the noise."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Segway</h3>
+          <span class="grave-card__year">2001</span>
+          <p class="grave-card__description">Personal transport</p>
+          <p class="grave-card__epitaph">"'Bigger than the internet.' Became a mall cop joke."</p>
+        </article>
+
+        <article class="grave-card animate-on-scroll">
+          <h3 class="grave-card__name">Kodak Digital Camera</h3>
+          <span class="grave-card__year">1975</span>
+          <p class="grave-card__description">Invented digital photography</p>
+          <p class="grave-card__epitaph">"Invented the future. Buried it to protect film."</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="graveyard-cta animate-on-scroll">
+      <div class="graveyard-cta__content">
+        <p class="graveyard-cta__text">Don't let this happen to your product.</p>
+        <a href="/contact.html" class="cta__button">Tell your story</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer animate-on-scroll">
+    <div class="footer__content">
+      <div class="footer__info">
+        <p class="footer__copyright">&copy; 2025 Explicit</p>
+        <a href="mailto:hello@explicit.studio" class="footer__email">hello@explicit.studio</a>
+      </div>
+      <nav class="footer__nav">
+        <a href="/work.html">Work</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/graveyard.html">Graveyard</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
 </body>
 </html>
