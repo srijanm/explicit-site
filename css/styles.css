@@ -417,11 +417,12 @@ button:focus-visible {
 
 .marquee__track {
   display: flex;
-  width: max-content;
-  animation: marquee 30s linear infinite;
+  width: fit-content;
+  animation: marquee 20s linear infinite;
 }
 
 .marquee__content {
+  flex-shrink: 0;
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 500;
@@ -429,13 +430,14 @@ button:focus-visible {
   letter-spacing: 0.1em;
   color: var(--text-secondary);
   white-space: nowrap;
+  padding-right: 0;
 }
 
 @keyframes marquee {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
