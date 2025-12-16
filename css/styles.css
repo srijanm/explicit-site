@@ -216,11 +216,13 @@ button:focus-visible {
 
 /* Hamburger Menu */
 .nav__hamburger {
+  position: relative;
+  z-index: 101;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   width: 44px;
   height: 44px;
   background: none;
@@ -240,18 +242,20 @@ button:focus-visible {
   height: 2px;
   background-color: var(--accent);
   transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
 }
 
 .nav__hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .nav__hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .nav__hamburger[aria-expanded="true"] .hamburger-line:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Mobile Navigation Overlay */
@@ -958,4 +962,51 @@ button:focus-visible {
 .modal__btn:focus {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+/* ========================================
+   SCROLL ANIMATIONS
+   ======================================== */
+
+/* Scroll-triggered fade in */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered work cards */
+.work__grid .work__card:nth-child(1) { transition-delay: 0ms; }
+.work__grid .work__card:nth-child(2) { transition-delay: 100ms; }
+.work__grid .work__card:nth-child(3) { transition-delay: 200ms; }
+.work__grid .work__card:nth-child(4) { transition-delay: 300ms; }
+
+/* Hero load animation */
+.animate-on-load {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 0.1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  .animate-on-load {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
 }
