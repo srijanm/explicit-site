@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Work — Explicit</title>
-  <meta name="description" content="Explicit is a creative studio for founders, VCs & companies who refuse to be ignored.">
+  <title>Work — Selected Projects | Explicit</title>
+  <meta name="description" content="Selected projects from Explicit. Brand identity, digital experiences, and launch campaigns for founders and companies who refuse to be ignored.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Work — Explicit">
-  <meta property="og:description" content="Explicit is a creative studio for founders, VCs & companies who refuse to be ignored.">
+  <meta property="og:title" content="Work — Selected Projects | Explicit">
+  <meta property="og:description" content="Selected projects from Explicit. Brand identity, digital experiences, and launch campaigns.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://explicit.site/work">
+  <meta property="og:url" content="https://explicit.site/work.html">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -22,6 +23,142 @@
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
 </head>
-<body data-theme="dark">
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="nav__logo">explicit</a>
+
+      <ul class="nav__links">
+        <li><a href="/work.html" class="active">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+
+      <button class="nav__theme-toggle" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav__mobile-overlay">
+      <ul class="nav__mobile-links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="page-hero__content animate-on-load">
+        <h1 class="page-hero__title">Work</h1>
+        <p class="page-hero__subtitle">Selected projects</p>
+      </div>
+    </section>
+
+    <!-- Work Grid -->
+    <section class="work-page">
+      <div class="work-page__grid">
+
+        <a href="#" class="work-page__card animate-on-scroll">
+          <div class="work-page__card-image"></div>
+          <div class="work-page__card-content">
+            <span class="work-page__card-type">Brand Identity + Digital</span>
+            <h3 class="work-page__card-title">Stealth Fintech</h3>
+            <p class="work-page__card-description">Complete brand identity and product launch for a Series A fintech startup disrupting cross-border payments.</p>
+          </div>
+        </a>
+
+        <a href="#" class="work-page__card animate-on-scroll">
+          <div class="work-page__card-image"></div>
+          <div class="work-page__card-content">
+            <span class="work-page__card-type">Strategy + Content</span>
+            <h3 class="work-page__card-title">Tier 1 VC Fund</h3>
+            <p class="work-page__card-description">Positioning and content strategy helping a venture fund stand out in a crowded market and attract top founders.</p>
+          </div>
+        </a>
+
+        <a href="#" class="work-page__card animate-on-scroll">
+          <div class="work-page__card-image"></div>
+          <div class="work-page__card-content">
+            <span class="work-page__card-type">Launch Campaign</span>
+            <h3 class="work-page__card-title">Developer Tools Startup</h3>
+            <p class="work-page__card-description">Product Hunt launch strategy and execution that drove 10,000 signups in 48 hours.</p>
+          </div>
+        </a>
+
+        <a href="#" class="work-page__card animate-on-scroll">
+          <div class="work-page__card-image"></div>
+          <div class="work-page__card-content">
+            <span class="work-page__card-type">Founder Brand</span>
+            <h3 class="work-page__card-title">Climate Tech CEO</h3>
+            <p class="work-page__card-description">Personal brand and thought leadership positioning for a climate tech founder raising Series B.</p>
+          </div>
+        </a>
+
+        <a href="#" class="work-page__card animate-on-scroll">
+          <div class="work-page__card-image"></div>
+          <div class="work-page__card-content">
+            <span class="work-page__card-type">Identity + Website</span>
+            <h3 class="work-page__card-title">Enterprise SaaS</h3>
+            <p class="work-page__card-description">Full rebrand and website redesign for an enterprise software company entering new markets.</p>
+          </div>
+        </a>
+
+        <a href="#" class="work-page__card animate-on-scroll">
+          <div class="work-page__card-image"></div>
+          <div class="work-page__card-content">
+            <span class="work-page__card-type">Activation</span>
+            <h3 class="work-page__card-title">Consumer Health Brand</h3>
+            <p class="work-page__card-description">Viral launch campaign and community activation for a DTC health brand targeting Gen Z.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="page-cta animate-on-scroll">
+      <div class="page-cta__content">
+        <p class="page-cta__text">Want to be next?</p>
+        <a href="/contact.html" class="cta__button">Start a project</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer animate-on-scroll">
+    <div class="footer__content">
+      <div class="footer__info">
+        <p class="footer__copyright">&copy; 2025 Explicit</p>
+        <a href="mailto:hello@explicit.studio" class="footer__email">hello@explicit.studio</a>
+      </div>
+      <nav class="footer__nav">
+        <a href="/work.html">Work</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/graveyard.html">Graveyard</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
 </body>
 </html>

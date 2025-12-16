@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Explicit</title>
-  <meta name="description" content="Explicit is a creative studio for founders, VCs & companies who refuse to be ignored.">
+  <title>About — Why We Exist | Explicit</title>
+  <meta name="description" content="We exist because 100,000 startups die every year. Most had great products. They died because no one knew they existed.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="About — Explicit">
-  <meta property="og:description" content="Explicit is a creative studio for founders, VCs & companies who refuse to be ignored.">
+  <meta property="og:title" content="About — Why We Exist | Explicit">
+  <meta property="og:description" content="We exist because 100,000 startups die every year. Most had great products. They died because no one knew they existed.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://explicit.site/about">
+  <meta property="og:url" content="https://explicit.site/about.html">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -22,6 +23,119 @@
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
 </head>
-<body data-theme="dark">
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="nav__logo">explicit</a>
+
+      <ul class="nav__links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html" class="active">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+
+      <button class="nav__theme-toggle" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav__mobile-overlay">
+      <ul class="nav__mobile-links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="page-hero__content animate-on-load">
+        <h1 class="page-hero__title">Why we exist</h1>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="about-section animate-on-scroll">
+      <div class="about-section__content">
+        <p class="about-section__text about-section__text--large">100,000 startups die every year. Most of them had great products. They died because <span class="highlight">no one knew they existed.</span></p>
+        <p class="about-section__text">The internet is littered with the carcasses of startups who couldn't get people to care. Not because they weren't building something valuable. But because they never learned to tell their story.</p>
+      </div>
+    </section>
+
+    <!-- Our Belief -->
+    <section class="about-section animate-on-scroll">
+      <div class="about-section__content">
+        <p class="about-section__text about-section__text--large">Products die every day. <span class="highlight">Great stories live forever.</span></p>
+        <p class="about-section__text">If you don't tell your story, someone else will. And they won't tell it right.</p>
+        <p class="about-section__text">In a world drowning in noise, the companies that win aren't always the best. They're the ones people remember.</p>
+      </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="about-section animate-on-scroll">
+      <div class="about-section__content">
+        <h2 class="about-section__heading">Who we are</h2>
+        <p class="about-section__text">Explicit is a creative studio at the intersection of art and technology.</p>
+        <p class="about-section__text">We've spent time on both ends — building products and building brands. We understand metrics and media, product and positioning, CAC and creativity.</p>
+        <p class="about-section__text about-section__text--emphasis">We don't do campaigns. We build culture. We start movements. We make sure people <span class="highlight">give a shit.</span></p>
+      </div>
+    </section>
+
+    <!-- Who We're For -->
+    <section class="about-section animate-on-scroll">
+      <div class="about-section__content">
+        <h2 class="about-section__heading">Who we're for</h2>
+        <ul class="about-section__list">
+          <li>Technical founders who know marketing is important but feels like a black hole.</li>
+          <li>VCs who understand they need to stand out to win the best deals.</li>
+          <li>Companies who refuse to be ignored.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="page-cta animate-on-scroll">
+      <div class="page-cta__content">
+        <p class="page-cta__text">Ready to tell your story?</p>
+        <a href="/contact.html" class="cta__button">Get in touch</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer animate-on-scroll">
+    <div class="footer__content">
+      <div class="footer__info">
+        <p class="footer__copyright">&copy; 2025 Explicit</p>
+        <a href="mailto:hello@explicit.studio" class="footer__email">hello@explicit.studio</a>
+      </div>
+      <nav class="footer__nav">
+        <a href="/work.html">Work</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/graveyard.html">Graveyard</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
 </body>
 </html>

@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Explicit</title>
-  <meta name="description" content="Explicit is a creative studio for founders, VCs & companies who refuse to be ignored.">
+  <title>Contact — Let's Talk | Explicit</title>
+  <meta name="description" content="Tell us what you're building. We'll get back to you within 48 hours.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Contact — Explicit">
-  <meta property="og:description" content="Explicit is a creative studio for founders, VCs & companies who refuse to be ignored.">
+  <meta property="og:title" content="Contact — Let's Talk | Explicit">
+  <meta property="og:description" content="Tell us what you're building. We'll get back to you within 48 hours.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://explicit.site/contact">
+  <meta property="og:url" content="https://explicit.site/contact.html">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -22,6 +23,107 @@
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
 </head>
-<body data-theme="dark">
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="nav__logo">explicit</a>
+
+      <ul class="nav__links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html" class="active">Contact</a></li>
+      </ul>
+
+      <button class="nav__theme-toggle" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav__mobile-overlay">
+      <ul class="nav__mobile-links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="page-hero__content animate-on-load">
+        <h1 class="page-hero__title">Let's talk</h1>
+        <p class="page-hero__subtitle">Tell us what you're building.</p>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section animate-on-scroll">
+      <div class="contact-form-section__content">
+        <form class="contact-form" action="#" method="POST">
+          <div class="contact-form__field">
+            <label for="name" class="contact-form__label">Name *</label>
+            <input type="text" id="name" name="name" class="contact-form__input" required>
+          </div>
+
+          <div class="contact-form__field">
+            <label for="email" class="contact-form__label">Email *</label>
+            <input type="email" id="email" name="email" class="contact-form__input" required>
+          </div>
+
+          <div class="contact-form__field">
+            <label for="company" class="contact-form__label">Company</label>
+            <input type="text" id="company" name="company" class="contact-form__input">
+          </div>
+
+          <div class="contact-form__field">
+            <label for="message" class="contact-form__label">Message *</label>
+            <textarea id="message" name="message" class="contact-form__textarea" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="contact-form__submit">Send it</button>
+        </form>
+
+        <div class="contact-form__alt">
+          <p>Or email us directly at <a href="mailto:hello@explicit.studio">hello@explicit.studio</a></p>
+          <p class="contact-form__response-time">We'll get back to you within 48 hours.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer animate-on-scroll">
+    <div class="footer__content">
+      <div class="footer__info">
+        <p class="footer__copyright">&copy; 2025 Explicit</p>
+        <a href="mailto:hello@explicit.studio" class="footer__email">hello@explicit.studio</a>
+      </div>
+      <nav class="footer__nav">
+        <a href="/work.html">Work</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/graveyard.html">Graveyard</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
 </body>
 </html>

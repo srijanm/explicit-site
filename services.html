@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — Explicit</title>
-  <meta name="description" content="Explicit is a creative studio for founders, VCs & companies who refuse to be ignored.">
+  <title>Services — What We Do | Explicit</title>
+  <meta name="description" content="Strategy, identity, digital, content, activations, and founder brand. Everything you need to make people give a shit.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Services — Explicit">
-  <meta property="og:description" content="Explicit is a creative studio for founders, VCs & companies who refuse to be ignored.">
+  <meta property="og:title" content="Services — What We Do | Explicit">
+  <meta property="og:description" content="Strategy, identity, digital, content, activations, and founder brand. Everything you need to make people give a shit.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://explicit.site/services">
+  <meta property="og:url" content="https://explicit.site/services.html">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -22,6 +23,213 @@
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
 </head>
-<body data-theme="dark">
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="nav__logo">explicit</a>
+
+      <ul class="nav__links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html" class="active">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+
+      <button class="nav__theme-toggle" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav__mobile-overlay">
+      <ul class="nav__mobile-links">
+        <li><a href="/work.html">Work</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/graveyard.html">Graveyard</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme">
+        [mode: <span class="theme-label">dark</span>]
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="page-hero__content animate-on-load">
+        <h1 class="page-hero__title">What we do</h1>
+        <p class="page-hero__subtitle">Everything you need to make people <span class="highlight">give a shit.</span></p>
+      </div>
+    </section>
+
+    <!-- Services List -->
+    <section class="services-page">
+      <div class="services-page__list">
+
+        <article class="service-item animate-on-scroll">
+          <div class="service-item__header">
+            <h2 class="service-item__title"><span class="highlight">STRATEGY</span></h2>
+            <p class="service-item__tagline">Who you are and why people should care.</p>
+          </div>
+          <ul class="service-item__details">
+            <li>Positioning</li>
+            <li>Narrative architecture</li>
+            <li>Competitive analysis</li>
+            <li>Audience mapping</li>
+          </ul>
+        </article>
+
+        <article class="service-item animate-on-scroll">
+          <div class="service-item__header">
+            <h2 class="service-item__title"><span class="highlight">IDENTITY</span></h2>
+            <p class="service-item__tagline">How your company looks and speaks.</p>
+          </div>
+          <ul class="service-item__details">
+            <li>Visual identity</li>
+            <li>Verbal identity</li>
+            <li>Brand guidelines</li>
+            <li>Design systems</li>
+          </ul>
+        </article>
+
+        <article class="service-item animate-on-scroll">
+          <div class="service-item__header">
+            <h2 class="service-item__title"><span class="highlight">DIGITAL</span></h2>
+            <p class="service-item__tagline">Web experiences designed and developed.</p>
+          </div>
+          <ul class="service-item__details">
+            <li>Websites</li>
+            <li>Landing pages</li>
+            <li>Product interfaces</li>
+            <li>Interactive experiences</li>
+          </ul>
+        </article>
+
+        <article class="service-item animate-on-scroll">
+          <div class="service-item__header">
+            <h2 class="service-item__title"><span class="highlight">CONTENT</span></h2>
+            <p class="service-item__tagline">Everything people see and hear from you.</p>
+          </div>
+          <ul class="service-item__details">
+            <li>Social media</li>
+            <li>Campaigns</li>
+            <li>Video production</li>
+            <li>Newsletters &amp; podcasts</li>
+          </ul>
+        </article>
+
+        <article class="service-item animate-on-scroll">
+          <div class="service-item__header">
+            <h2 class="service-item__title"><span class="highlight">ACTIVATIONS</span></h2>
+            <p class="service-item__tagline">Make your product famous.</p>
+          </div>
+          <ul class="service-item__details">
+            <li>Launch campaigns</li>
+            <li>Viral moments</li>
+            <li>PR stunts</li>
+            <li>Community events</li>
+          </ul>
+        </article>
+
+        <article class="service-item animate-on-scroll">
+          <div class="service-item__header">
+            <h2 class="service-item__title"><span class="highlight">FOUNDER BRAND</span></h2>
+            <p class="service-item__tagline">Your personal story as a growth lever.</p>
+          </div>
+          <ul class="service-item__details">
+            <li>Personal positioning</li>
+            <li>LinkedIn/Twitter presence</li>
+            <li>Speaking opportunities</li>
+            <li>Thought leadership</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- How We Work -->
+    <section class="how-we-work animate-on-scroll">
+      <div class="how-we-work__content">
+        <h2 class="how-we-work__title">How we work</h2>
+        <p class="how-we-work__intro">Two models:</p>
+
+        <div class="how-we-work__models">
+          <div class="how-we-work__model">
+            <h3 class="how-we-work__model-title">1. Embedded</h3>
+            <p class="how-we-work__model-description">A creative lead lives in your Slack, joins your meetings, owns everything creative in your company.</p>
+          </div>
+          <div class="how-we-work__model">
+            <h3 class="how-we-work__model-title">2. Project-based</h3>
+            <p class="how-we-work__model-description">One-time engagements for positioning, identity, launches, or campaigns.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="page-cta animate-on-scroll">
+      <div class="page-cta__content">
+        <p class="page-cta__text">Let's figure out what you need.</p>
+        <a href="/contact.html" class="cta__button">Get in touch</a>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="faqs animate-on-scroll">
+      <div class="faqs__content">
+        <h2 class="faqs__title">FAQs</h2>
+
+        <div class="faq-item">
+          <h3 class="faq-item__question">How much does it cost?</h3>
+          <p class="faq-item__answer">Depends on scope. Let's talk.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__question">How long does a project take?</h3>
+          <p class="faq-item__answer">Brand identity: 6-8 weeks. Content retainers: ongoing. Launches: depends on timeline.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__question">Do you work with early-stage startups?</h3>
+          <p class="faq-item__answer">Yes, if you've raised funding or have revenue.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__question">What's your process?</h3>
+          <p class="faq-item__answer">We start with strategy. Always.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer animate-on-scroll">
+    <div class="footer__content">
+      <div class="footer__info">
+        <p class="footer__copyright">&copy; 2025 Explicit</p>
+        <a href="mailto:hello@explicit.studio" class="footer__email">hello@explicit.studio</a>
+      </div>
+      <nav class="footer__nav">
+        <a href="/work.html">Work</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/graveyard.html">Graveyard</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
 </body>
 </html>
