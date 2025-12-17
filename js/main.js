@@ -258,8 +258,19 @@ function initHeroSlideshow() {
   const slides = slideshow.querySelectorAll('.hero__slide');
   if (slides.length <= 1) return;
 
+  const nameEl = slideshow.querySelector('.hero__slideshow-name');
+  const epitaphEl = slideshow.querySelector('.hero__slideshow-epitaph');
+
   let currentIndex = 0;
   const intervalTime = 3000; // 3 seconds per slide
+
+  function updateCaption(slide) {
+    if (!nameEl || !epitaphEl) return;
+    const name = slide.dataset.name || '';
+    const epitaph = slide.dataset.epitaph || '';
+    nameEl.textContent = name;
+    epitaphEl.textContent = epitaph ? `"${epitaph}"` : '';
+  }
 
   function showNextSlide() {
     // Remove active class from current slide
@@ -270,6 +281,9 @@ function initHeroSlideshow() {
 
     // Add active class to new slide
     slides[currentIndex].classList.add('active');
+
+    // Update caption
+    updateCaption(slides[currentIndex]);
   }
 
   // Start the slideshow

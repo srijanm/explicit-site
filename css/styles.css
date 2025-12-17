@@ -464,6 +464,32 @@ button:focus-visible {
   opacity: 1;
 }
 
+/* Hero Slideshow Caption */
+.hero__slideshow-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--space-xs);
+  text-align: center;
+}
+
+.hero__slideshow-name {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hero__slideshow-epitaph {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
 /* ========================================
    BLINKING CURSOR
    ======================================== */
