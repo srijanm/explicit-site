@@ -837,10 +837,10 @@ button:focus-visible {
 }
 
 .work__item-title {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: -0.02em;
   margin-top: var(--space-sm);
   margin-bottom: 4px;
 }
