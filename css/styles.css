@@ -879,10 +879,12 @@ button:focus-visible {
 .client-card {
   border: 1px solid rgba(0, 255, 65, 0.2);
   background-color: var(--bg-secondary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="light"] .client-card {
   border-color: rgba(1, 3, 245, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .client-card__header {
@@ -911,6 +913,7 @@ button:focus-visible {
   font-weight: 600;
   letter-spacing: -0.04em;
   margin: 0;
+  color: var(--text-primary);
 }
 
 .client-card__toggle {
@@ -946,22 +949,19 @@ button:focus-visible {
 }
 
 .client-card__label {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   margin-bottom: var(--space-xs);
+  display: inline-block;
 }
 
 .client-card__text {
-  font-family: var(--font-heading);
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
-  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .client-card__list {
