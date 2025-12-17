@@ -291,6 +291,38 @@ function initHeroSlideshow() {
 }
 
 // ========================================
+// CLIENT CARDS ACCORDION
+// ========================================
+
+/**
+ * Initialize the client cards accordion
+ */
+function initClientCards() {
+  const cards = document.querySelectorAll('.client-card');
+
+  cards.forEach(card => {
+    const header = card.querySelector('.client-card__header');
+    if (!header) return;
+
+    header.addEventListener('click', () => {
+      const isOpen = card.classList.contains('is-open');
+
+      // Close all other cards
+      cards.forEach(otherCard => {
+        if (otherCard !== card) {
+          otherCard.classList.remove('is-open');
+          otherCard.querySelector('.client-card__header').setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Toggle current card
+      card.classList.toggle('is-open');
+      header.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+}
+
+// ========================================
 // INITIALIZE
 // ========================================
 
@@ -301,4 +333,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initEasterEggModal();
   initScrollAnimations();
   initHeroSlideshow();
+  initClientCards();
 });
