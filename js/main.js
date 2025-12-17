@@ -244,6 +244,39 @@ function initScrollAnimations() {
 }
 
 // ========================================
+// HERO SLIDESHOW
+// ========================================
+
+/**
+ * Initialize the hero image slideshow
+ * Images can be easily changed by modifying the HTML
+ */
+function initHeroSlideshow() {
+  const slideshow = document.querySelector('.hero__slideshow');
+  if (!slideshow) return;
+
+  const slides = slideshow.querySelectorAll('.hero__slide');
+  if (slides.length <= 1) return;
+
+  let currentIndex = 0;
+  const intervalTime = 3000; // 3 seconds per slide
+
+  function showNextSlide() {
+    // Remove active class from current slide
+    slides[currentIndex].classList.remove('active');
+
+    // Move to next slide (loop back to start if at end)
+    currentIndex = (currentIndex + 1) % slides.length;
+
+    // Add active class to new slide
+    slides[currentIndex].classList.add('active');
+  }
+
+  // Start the slideshow
+  setInterval(showNextSlide, intervalTime);
+}
+
+// ========================================
 // INITIALIZE
 // ========================================
 
@@ -253,4 +286,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initEasterEggModal();
   initScrollAnimations();
+  initHeroSlideshow();
 });
