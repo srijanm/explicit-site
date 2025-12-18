@@ -218,6 +218,11 @@ button:focus-visible {
   color: var(--accent);
 }
 
+.theme-label {
+  display: inline-block;
+  min-width: 32px; /* Prevent CLS when text changes dark/light */
+}
+
 /* Hamburger Menu */
 .nav__hamburger {
   position: relative;
@@ -470,6 +475,7 @@ button:focus-visible {
   gap: 2px;
   margin-top: var(--space-xs);
   text-align: center;
+  min-height: 48px; /* Prevent CLS from text length changes */
 }
 
 .hero__slideshow-name {
@@ -525,6 +531,7 @@ button:focus-visible {
 .marquee {
   overflow: hidden;
   padding: var(--space-sm) 0;
+  contain: layout style; /* Prevent CLS from animation */
 }
 
 .marquee__track {
@@ -1333,16 +1340,15 @@ button:focus-visible {
    SCROLL ANIMATIONS
    ======================================== */
 
-/* Scroll-triggered fade in */
+/* Scroll-triggered fade in - opacity only to prevent CLS */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out;
+  contain: layout style; /* Prevent layout shifts from propagating */
 }
 
 .animate-on-scroll.is-visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* Staggered work cards */
@@ -1351,17 +1357,15 @@ button:focus-visible {
 .work__grid .work__card:nth-child(3) { transition-delay: 200ms; }
 .work__grid .work__card:nth-child(4) { transition-delay: 300ms; }
 
-/* Hero load animation */
+/* Hero load animation - opacity only to prevent CLS */
 .animate-on-load {
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out 0.1s forwards;
+  animation: fadeIn 0.8s ease-out 0.1s forwards;
 }
 
-@keyframes fadeInUp {
+@keyframes fadeIn {
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -1370,7 +1374,6 @@ button:focus-visible {
   .animate-on-scroll,
   .animate-on-load {
     opacity: 1;
-    transform: none;
     transition: none;
     animation: none;
   }

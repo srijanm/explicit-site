@@ -20,17 +20,17 @@
 
   <!-- Critical CSS -->
   <style>
-    :root{--bg-primary:#000;--bg-secondary:#0a0a0a;--text-primary:#F3F2ED;--text-secondary:#a8a8a0;--accent:#00FF41;--font-body:'JetBrains Mono',monospace;--font-heading:'Inter',sans-serif;--space-xs:.5rem;--space-sm:1rem;--space-md:2rem;--space-lg:4rem;--space-xl:8rem;--container-max:1200px;--container-padding:var(--space-md)}[data-theme="light"]{--bg-primary:#F5F5F1;--bg-secondary:#EDEDEA;--text-primary:#272727;--text-secondary:#5a5a5a;--accent:#0103F5}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);font-weight:400;font-size:1rem;background-color:var(--bg-primary);color:var(--text-primary);line-height:1.6}.header{position:fixed;top:0;left:0;right:0;z-index:100}.nav{display:flex;align-items:center;justify-content:space-between;padding:var(--space-sm) var(--container-padding);max-width:var(--container-max);margin:0 auto}.nav__logo{font-family:var(--font-body);font-weight:500;font-size:1.25rem;color:var(--accent);text-decoration:none}.nav__links{display:none;list-style:none;gap:var(--space-md)}@media(min-width:768px){.nav__links{display:flex}}.nav__links a{color:var(--text-secondary);font-size:.875rem;text-decoration:none}.hero{min-height:85vh;display:flex;align-items:flex-start;padding:var(--space-xl) var(--container-padding);padding-top:calc(var(--space-xl) + 80px);max-width:var(--container-max);margin:0 auto}h1,h2,h3{font-family:var(--font-heading);font-weight:600;letter-spacing:-.04em}
+    :root{--bg-primary:#000;--bg-secondary:#0a0a0a;--text-primary:#F3F2ED;--text-secondary:#a8a8a0;--accent:#00FF41;--font-body:'JetBrains Mono',monospace;--font-heading:'Inter',sans-serif;--space-xs:.5rem;--space-sm:1rem;--space-md:2rem;--space-lg:4rem;--space-xl:8rem;--container-max:1200px;--container-padding:var(--space-md)}[data-theme="light"]{--bg-primary:#F5F5F1;--bg-secondary:#EDEDEA;--text-primary:#272727;--text-secondary:#5a5a5a;--accent:#0103F5}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);font-weight:400;font-size:1rem;background-color:var(--bg-primary);color:var(--text-primary);line-height:1.6}.header{position:fixed;top:0;left:0;right:0;z-index:100}.nav{display:flex;align-items:center;justify-content:space-between;padding:var(--space-sm) var(--container-padding);max-width:var(--container-max);margin:0 auto}.nav__logo{font-family:var(--font-body);font-weight:500;font-size:1.25rem;color:var(--accent);text-decoration:none}.nav__links{display:none;list-style:none;gap:var(--space-md)}@media(min-width:768px){.nav__links{display:flex}}.nav__links a{color:var(--text-secondary);font-size:.875rem;text-decoration:none}.hero{min-height:85vh;display:flex;align-items:flex-start;padding:var(--space-xl) var(--container-padding);padding-top:calc(var(--space-xl) + 80px);max-width:var(--container-max);margin:0 auto}h1,h2,h3{font-family:var(--font-heading);font-weight:600;letter-spacing:-.04em}.hero__slideshow{width:220px;flex-shrink:0;margin:var(--space-md) 0}.hero__slideshow-track{position:relative;width:100%;aspect-ratio:1;overflow:hidden}.hero__slide{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;opacity:0}.hero__slide.active{opacity:1}.hero__slideshow-caption{min-height:48px}.marquee{overflow:hidden;contain:layout style}.marquee__item img{width:80px;height:80px;object-fit:contain}.work__item-image{width:100%;aspect-ratio:9/16;overflow:hidden}.work__item-image img{width:100%;height:100%;object-fit:cover}.animate-on-scroll{opacity:0;contain:layout style}.animate-on-scroll.is-visible{opacity:1}.animate-on-load{opacity:0}.theme-label{display:inline-block;min-width:32px}.nav__mobile-overlay{opacity:0;visibility:hidden;position:fixed;top:0;left:0;right:0;bottom:0}.modal-overlay{opacity:0;pointer-events:none;position:fixed;top:0;left:0;right:0;bottom:0}@media(min-width:900px){.hero__slideshow{width:350px;margin:0}}
   </style>
 
-  <!-- Fonts - Optimized Loading -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" href="assets/images/hero-slideshow/1.png" fetchpriority="high">
 
-  <!-- Styles - Async Loading -->
-  <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+  <!-- Fonts - use optional to prevent CLS from late font swap -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=JetBrains+Mono:wght@400;500&display=optional">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
 
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
@@ -86,7 +86,7 @@ Say hi: hello@explicit.studio
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero__content animate-on-load">
+      <div class="hero__content">
         <div class="hero__main">
           <div class="hero__text">
             <h1 class="hero__headline">
@@ -97,20 +97,20 @@ Say hi: hello@explicit.studio
           </div>
           <div class="hero__slideshow">
             <div class="hero__slideshow-track">
-              <img src="assets/images/hero-slideshow/1.png" alt="Apple Newton" class="hero__slide active" data-name="Apple Newton" data-epitaph="Ahead of its time. Became a punchline.">
-              <img src="assets/images/hero-slideshow/2.png" alt="Iridium" class="hero__slide" data-name="Iridium" data-epitaph="77 satellites. Couldn't explain who needed it.">
-              <img src="assets/images/hero-slideshow/3.png" alt="Microsoft Zune" class="hero__slide" data-name="Microsoft Zune" data-epitaph="Good product. 'Squirting' songs.">
-              <img src="assets/images/hero-slideshow/4.png" alt="Sony MiniDisc" class="hero__slide" data-name="Sony MiniDisc" data-epitaph="Japan loved it. The West never heard of it.">
-              <img src="assets/images/hero-slideshow/5.png" alt="Friendster" class="hero__slide" data-name="Friendster" data-epitaph="Had 3 million users. MySpace told a better story.">
-              <img src="assets/images/hero-slideshow/6.png" alt="Sony Betamax" class="hero__slide" data-name="Sony Betamax" data-epitaph="Better quality. Worse marketing.">
-              <img src="assets/images/hero-slideshow/7.png" alt="DeLorean" class="hero__slide" data-name="DeLorean" data-epitaph="Only famous because of a movie.">
-              <img src="assets/images/hero-slideshow/8.png" alt="Palm Pre" class="hero__slide" data-name="Palm Pre" data-epitaph="'Like a deck of cards' wasn't a story.">
-              <img src="assets/images/hero-slideshow/9.png" alt="General Magic" class="hero__slide" data-name="General Magic" data-epitaph="A decade too early. A story too quiet.">
-              <img src="assets/images/hero-slideshow/10.png" alt="Xerox Alto" class="hero__slide" data-name="Xerox Alto" data-epitaph="Apple saw it. Xerox didn't tell the story.">
-              <img src="assets/images/hero-slideshow/11.png" alt="Kodak" class="hero__slide" data-name="Kodak" data-epitaph="Invented the future. Buried it to protect film.">
-              <img src="assets/images/hero-slideshow/12.png" alt="Vine" class="hero__slide" data-name="Vine" data-epitaph="Twitter killed it. TikTok made billions.">
-              <img src="assets/images/hero-slideshow/13.png" alt="Google Wave" class="hero__slide" data-name="Google Wave" data-epitaph="Google couldn't explain it in one sentence.">
-              <img src="assets/images/hero-slideshow/14.png" alt="Segway" class="hero__slide" data-name="Segway" data-epitaph="'Bigger than the internet.' Became a mall cop joke.">
+              <img src="assets/images/hero-slideshow/1.png" alt="Apple Newton" class="hero__slide active" data-name="Apple Newton" data-epitaph="Ahead of its time. Became a punchline." width="400" height="400" fetchpriority="high" decoding="async">
+              <img src="assets/images/hero-slideshow/2.png" alt="Iridium" class="hero__slide" data-name="Iridium" data-epitaph="77 satellites. Couldn't explain who needed it." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/3.png" alt="Microsoft Zune" class="hero__slide" data-name="Microsoft Zune" data-epitaph="Good product. 'Squirting' songs." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/4.png" alt="Sony MiniDisc" class="hero__slide" data-name="Sony MiniDisc" data-epitaph="Japan loved it. The West never heard of it." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/5.png" alt="Friendster" class="hero__slide" data-name="Friendster" data-epitaph="Had 3 million users. MySpace told a better story." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/6.png" alt="Sony Betamax" class="hero__slide" data-name="Sony Betamax" data-epitaph="Better quality. Worse marketing." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/7.png" alt="DeLorean" class="hero__slide" data-name="DeLorean" data-epitaph="Only famous because of a movie." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/8.png" alt="Palm Pre" class="hero__slide" data-name="Palm Pre" data-epitaph="'Like a deck of cards' wasn't a story." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/9.png" alt="General Magic" class="hero__slide" data-name="General Magic" data-epitaph="A decade too early. A story too quiet." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/10.png" alt="Xerox Alto" class="hero__slide" data-name="Xerox Alto" data-epitaph="Apple saw it. Xerox didn't tell the story." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/11.png" alt="Kodak" class="hero__slide" data-name="Kodak" data-epitaph="Invented the future. Buried it to protect film." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/12.png" alt="Vine" class="hero__slide" data-name="Vine" data-epitaph="Twitter killed it. TikTok made billions." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/13.png" alt="Google Wave" class="hero__slide" data-name="Google Wave" data-epitaph="Google couldn't explain it in one sentence." width="400" height="400" loading="lazy">
+              <img src="assets/images/hero-slideshow/14.png" alt="Segway" class="hero__slide" data-name="Segway" data-epitaph="'Bigger than the internet.' Became a mall cop joke." width="400" height="400" loading="lazy">
             </div>
             <div class="hero__slideshow-caption">
               <span class="hero__slideshow-name">Apple Newton</span>
@@ -129,116 +129,116 @@ Say hi: hello@explicit.studio
       <div class="marquee marquee--with-images">
         <div class="marquee__track">
           <div class="marquee__item">
-            <img src="assets/images/graveyard/xerox-alto.png" alt="Xerox Alto">
+            <img src="assets/images/graveyard/xerox-alto.png" alt="Xerox Alto" width="80" height="80" loading="lazy">
             <span>XEROX ALTO</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/general-magic.png" alt="General Magic">
+            <img src="assets/images/graveyard/general-magic.png" alt="General Magic" width="80" height="80" loading="lazy">
             <span>GENERAL MAGIC</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/segway.png" alt="Segway">
+            <img src="assets/images/graveyard/segway.png" alt="Segway" width="80" height="80" loading="lazy">
             <span>SEGWAY</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/google-wave.png" alt="Google Wave">
+            <img src="assets/images/graveyard/google-wave.png" alt="Google Wave" width="80" height="80" loading="lazy">
             <span>GOOGLE WAVE</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/vine.png" alt="Vine">
+            <img src="assets/images/graveyard/vine.png" alt="Vine" width="80" height="80" loading="lazy">
             <span>VINE</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/palm-pre.png" alt="Palm Pre">
+            <img src="assets/images/graveyard/palm-pre.png" alt="Palm Pre" width="80" height="80" loading="lazy">
             <span>PALM PRE</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/kodak.png" alt="Kodak">
+            <img src="assets/images/graveyard/kodak.png" alt="Kodak" width="80" height="80" loading="lazy">
             <span>KODAK</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/betamax.png" alt="Betamax">
+            <img src="assets/images/graveyard/betamax.png" alt="Betamax" width="80" height="80" loading="lazy">
             <span>BETAMAX</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/delorean.png" alt="DeLorean">
+            <img src="assets/images/graveyard/delorean.png" alt="DeLorean" width="80" height="80" loading="lazy">
             <span>DELOREAN</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/friendster.png" alt="Friendster">
+            <img src="assets/images/graveyard/friendster.png" alt="Friendster" width="80" height="80" loading="lazy">
             <span>FRIENDSTER</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/sony-minidisc.png" alt="Sony MiniDisc">
+            <img src="assets/images/graveyard/sony-minidisc.png" alt="Sony MiniDisc" width="80" height="80" loading="lazy">
             <span>SONY MINIDISC</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/apple-newton.png" alt="Apple Newton">
+            <img src="assets/images/graveyard/apple-newton.png" alt="Apple Newton" width="80" height="80" loading="lazy">
             <span>APPLE NEWTON</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/iridium.png" alt="Iridium">
+            <img src="assets/images/graveyard/iridium.png" alt="Iridium" width="80" height="80" loading="lazy">
             <span>IRIDIUM</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/zune.png" alt="Zune">
+            <img src="assets/images/graveyard/zune.png" alt="Zune" width="80" height="80" loading="lazy">
             <span>ZUNE</span>
           </div>
           <!-- Duplicate for seamless loop -->
           <div class="marquee__item">
-            <img src="assets/images/graveyard/xerox-alto.png" alt="Xerox Alto">
+            <img src="assets/images/graveyard/xerox-alto.png" alt="Xerox Alto" width="80" height="80" loading="lazy">
             <span>XEROX ALTO</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/general-magic.png" alt="General Magic">
+            <img src="assets/images/graveyard/general-magic.png" alt="General Magic" width="80" height="80" loading="lazy">
             <span>GENERAL MAGIC</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/segway.png" alt="Segway">
+            <img src="assets/images/graveyard/segway.png" alt="Segway" width="80" height="80" loading="lazy">
             <span>SEGWAY</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/google-wave.png" alt="Google Wave">
+            <img src="assets/images/graveyard/google-wave.png" alt="Google Wave" width="80" height="80" loading="lazy">
             <span>GOOGLE WAVE</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/vine.png" alt="Vine">
+            <img src="assets/images/graveyard/vine.png" alt="Vine" width="80" height="80" loading="lazy">
             <span>VINE</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/palm-pre.png" alt="Palm Pre">
+            <img src="assets/images/graveyard/palm-pre.png" alt="Palm Pre" width="80" height="80" loading="lazy">
             <span>PALM PRE</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/kodak.png" alt="Kodak">
+            <img src="assets/images/graveyard/kodak.png" alt="Kodak" width="80" height="80" loading="lazy">
             <span>KODAK</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/betamax.png" alt="Betamax">
+            <img src="assets/images/graveyard/betamax.png" alt="Betamax" width="80" height="80" loading="lazy">
             <span>BETAMAX</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/delorean.png" alt="DeLorean">
+            <img src="assets/images/graveyard/delorean.png" alt="DeLorean" width="80" height="80" loading="lazy">
             <span>DELOREAN</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/friendster.png" alt="Friendster">
+            <img src="assets/images/graveyard/friendster.png" alt="Friendster" width="80" height="80" loading="lazy">
             <span>FRIENDSTER</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/sony-minidisc.png" alt="Sony MiniDisc">
+            <img src="assets/images/graveyard/sony-minidisc.png" alt="Sony MiniDisc" width="80" height="80" loading="lazy">
             <span>SONY MINIDISC</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/apple-newton.png" alt="Apple Newton">
+            <img src="assets/images/graveyard/apple-newton.png" alt="Apple Newton" width="80" height="80" loading="lazy">
             <span>APPLE NEWTON</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/iridium.png" alt="Iridium">
+            <img src="assets/images/graveyard/iridium.png" alt="Iridium" width="80" height="80" loading="lazy">
             <span>IRIDIUM</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/zune.png" alt="Zune">
+            <img src="assets/images/graveyard/zune.png" alt="Zune" width="80" height="80" loading="lazy">
             <span>ZUNE</span>
           </div>
         </div>
@@ -438,49 +438,49 @@ Say hi: hello@explicit.studio
         <div class="work__track">
           <a href="/work/pause.html" class="work__item">
             <div class="work__item-image">
-              <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzhham50Nzd1Y3plc3AzNXZvOGFhbXV2bWFuZ2N5bXd5bDFpN3V0byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Fqt9bT2nNS8Xi2uHdS/giphy.gif" alt="Pause">
+              <img src="assets/images/work/f8595281-a3ee-4e49-8b84-c69dc0bafb6c.png" alt="Pause" width="220" height="391" loading="lazy">
             </div>
             <h3 class="work__item-title"><span class="highlight">Pause</span></h3>
             <p class="work__item-description">changed how mental health was positioned using only meme marketing</p>
           </a>
           <a href="/work/magic-beans.html" class="work__item">
             <div class="work__item-image">
-              <img src="assets/images/work/ca508b97-c42a-4d40-b458-e2e6b27fcacc.png" alt="Magic Beans & Insider">
+              <img src="assets/images/work/ca508b97-c42a-4d40-b458-e2e6b27fcacc.png" alt="Magic Beans & Insider" width="220" height="391" loading="lazy">
             </div>
             <h3 class="work__item-title"><span class="highlight">Magic Beans & Insider</span></h3>
             <p class="work__item-description">Launched India's top health & wellness community with 400 of the country's most influential people in the field</p>
           </a>
           <a href="/work/huberman.html" class="work__item">
             <div class="work__item-image">
-              <img src="assets/images/work/0d1a498b-c9a3-4fbe-8c90-c34d7bf0d2c6.png" alt="Huberman Mithaiwale">
+              <img src="assets/images/work/0d1a498b-c9a3-4fbe-8c90-c34d7bf0d2c6.png" alt="Huberman Mithaiwale" width="220" height="391" loading="lazy">
             </div>
             <h3 class="work__item-title"><span class="highlight">Huberman Mithaiwale</span></h3>
             <p class="work__item-description">went viral on twitter by creating protein pedas based on the popular health podcaster</p>
           </a>
           <a href="/work/touching-grass.html" class="work__item">
             <div class="work__item-image">
-              <img src="assets/images/work/72975e99-af23-467f-b72b-8901537be13a.png" alt="Touching Grass">
+              <img src="assets/images/work/72975e99-af23-467f-b72b-8901537be13a.png" alt="Touching Grass" width="220" height="391" loading="lazy">
             </div>
             <h3 class="work__item-title"><span class="highlight">Touching Grass</span></h3>
             <p class="work__item-description">owned the moment for "touching grass" by creating a product that was literally, grass</p>
           </a>
           <a href="/work/pain-co.html" class="work__item">
             <div class="work__item-image">
-              <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2MyajVzOTdheXJmNXhxMW1iNXBzbzk0Z2R5OWhpa2RoMHUxc2pkZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iNFtsuzZ4lXXumjtw4/giphy.gif" alt="Pain & Co">
+              <img src="assets/images/work/pc1.png" alt="Pain & Co" width="220" height="391" loading="lazy">
             </div>
             <h3 class="work__item-title"><span class="highlight">Pain & Co</span></h3>
             <p class="work__item-description">created a limited drop of mental health merchandise as a sub brand of pause</p>
           </a>
           <a href="https://nothing.srijanmahajan.com/" target="_blank" rel="noopener noreferrer" class="work__item">
             <div class="work__item-image">
-              <img src="assets/images/work/nothing.png" alt="Nothing">
+              <img src="assets/images/work/nothing.png" alt="Nothing" width="220" height="391" loading="lazy">
             </div>
             <h3 class="work__item-title"><span class="highlight">Nothing</span></h3>
             <p class="work__item-description">designed the brand identity & website for Nothing Phone India launch</p>
           </a>
           <a href="https://twt.srijanmahajan.com/" target="_blank" rel="noopener noreferrer" class="work__item">
             <div class="work__item-image">
-              <img src="assets/images/work/twt.png" alt="The Whole Truth">
+              <img src="assets/images/work/twt.png" alt="The Whole Truth" width="220" height="391" loading="lazy">
             </div>
             <h3 class="work__item-title"><span class="highlight">The Whole Truth</span></h3>
             <p class="work__item-description">created a guilt-free Diwali mithai campaign for The Whole Truth Foods</p>
