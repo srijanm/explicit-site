@@ -323,6 +323,50 @@ function initClientCards() {
 }
 
 // ========================================
+// CONTACT FORM
+// ========================================
+
+/**
+ * Initialize the contact form with Formspree submission
+ */
+function initContactForm() {
+  const contactForm = document.querySelector('.contact-form');
+
+  if (!contactForm) return;
+
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        this.innerHTML = '<div class="form-success"><p>Message sent.</p><p>We\'ll get back to you within 48 hours.</p></div>';
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      submitBtn.textContent = 'Error - try again';
+      submitBtn.disabled = false;
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+      }, 3000);
+    }
+  });
+}
+
+// ========================================
 // INITIALIZE
 // ========================================
 
@@ -334,4 +378,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initHeroSlideshow();
   initClientCards();
+  initContactForm();
 });
