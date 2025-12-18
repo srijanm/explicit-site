@@ -2229,8 +2229,8 @@ button:focus-visible {
 
 /* Form Success Message */
 .form-success {
-  text-align: center;
-  padding: var(--space-lg);
+  text-align: left;
+  padding: var(--space-lg) 0;
 }
 
 .form-success p:first-child {

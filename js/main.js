@@ -352,7 +352,7 @@ function initContactForm() {
       });
 
       if (response.ok) {
-        this.innerHTML = '<div class="form-success"><p>Message sent.</p><p>We\'ll get back to you within 48 hours.</p></div>';
+        this.innerHTML = '<div class="form-success"><p>Message sent.</p></div>';
       } else {
         throw new Error('Form submission failed');
       }
@@ -371,12 +371,28 @@ function initContactForm() {
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Critical initializations - run immediately
   initTheme();
   initHeaderScroll();
   initMobileNav();
-  initEasterEggModal();
-  initScrollAnimations();
-  initHeroSlideshow();
-  initClientCards();
-  initContactForm();
+
+  // Non-critical initializations - defer to idle time
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      initEasterEggModal();
+      initScrollAnimations();
+      initHeroSlideshow();
+      initClientCards();
+      initContactForm();
+    });
+  } else {
+    // Fallback for browsers without requestIdleCallback
+    setTimeout(() => {
+      initEasterEggModal();
+      initScrollAnimations();
+      initHeroSlideshow();
+      initClientCards();
+      initContactForm();
+    }, 200);
+  }
 });

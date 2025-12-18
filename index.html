@@ -12,13 +12,25 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://explicit.site">
 
-  <!-- Fonts -->
+  <!-- Resource Hints -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Critical CSS -->
+  <style>
+    :root{--bg-primary:#000;--bg-secondary:#0a0a0a;--text-primary:#F3F2ED;--text-secondary:#a8a8a0;--accent:#00FF41;--font-body:'JetBrains Mono',monospace;--font-heading:'Inter',sans-serif;--space-xs:.5rem;--space-sm:1rem;--space-md:2rem;--space-lg:4rem;--space-xl:8rem;--container-max:1200px;--container-padding:var(--space-md)}[data-theme="light"]{--bg-primary:#F5F5F1;--bg-secondary:#EDEDEA;--text-primary:#272727;--text-secondary:#5a5a5a;--accent:#0103F5}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);font-weight:400;font-size:1rem;background-color:var(--bg-primary);color:var(--text-primary);line-height:1.6}.header{position:fixed;top:0;left:0;right:0;z-index:100}.nav{display:flex;align-items:center;justify-content:space-between;padding:var(--space-sm) var(--container-padding);max-width:var(--container-max);margin:0 auto}.nav__logo{font-family:var(--font-body);font-weight:500;font-size:1.25rem;color:var(--accent);text-decoration:none}.nav__links{display:none;list-style:none;gap:var(--space-md)}@media(min-width:768px){.nav__links{display:flex}}.nav__links a{color:var(--text-secondary);font-size:.875rem;text-decoration:none}.hero{min-height:85vh;display:flex;align-items:flex-start;padding:var(--space-xl) var(--container-padding);padding-top:calc(var(--space-xl) + 80px);max-width:var(--container-max);margin:0 auto}h1,h2,h3{font-family:var(--font-heading);font-weight:600;letter-spacing:-.04em}
+  </style>
+
+  <!-- Fonts - Optimized Loading -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+
+  <!-- Styles - Async Loading -->
+  <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
 
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
