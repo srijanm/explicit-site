@@ -1125,6 +1125,23 @@ button:focus-visible {
   align-items: center;
 }
 
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.footer__logo {
+  display: block;
+  color: var(--accent);
+}
+
+.footer__logo-svg {
+  height: 20px;
+  width: auto;
+  fill: currentColor;
+}
+
 .footer__copyright {
   font-size: 0.875rem;
   color: var(--text-secondary);
