@@ -1157,16 +1157,10 @@ button:focus-visible {
   max-width: var(--container-max);
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-@media (min-width: 900px) {
-  .footer__content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
 .footer__info {
