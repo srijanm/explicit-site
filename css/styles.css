@@ -153,15 +153,20 @@ button:focus-visible {
 }
 
 .nav__logo {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
   color: var(--accent);
   text-decoration: none;
 }
 
-.nav__logo:hover {
-  color: var(--accent);
+.nav__logo-svg {
+  height: 24px;
+  width: auto;
+  fill: currentColor;
+  transition: opacity 0.2s ease;
+}
+
+.nav__logo:hover .nav__logo-svg {
   opacity: 0.8;
 }
 
