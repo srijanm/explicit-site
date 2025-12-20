@@ -29,8 +29,8 @@ function getPreferredTheme() {
     return 'light';
   }
 
-  // Default to dark
-  return 'dark';
+  // Default to light
+  return 'light';
 }
 
 /**
@@ -46,6 +46,12 @@ function setTheme(theme) {
   toggleLabels.forEach(label => {
     label.textContent = theme;
   });
+
+  // Update mobile header theme toggle icon
+  const mobileToggle = document.querySelector('.nav__theme-toggle--mobile-header');
+  if (mobileToggle) {
+    mobileToggle.textContent = theme === 'light' ? '☀' : '☾';
+  }
 
   // Save to localStorage
   localStorage.setItem(STORAGE_KEY, theme);
@@ -73,11 +79,17 @@ function initTheme() {
   const theme = getPreferredTheme();
   setTheme(theme);
 
-  // Set up toggle button click handlers
+  // Set up toggle button click handlers (desktop and mobile overlay)
   const toggleButtons = document.querySelectorAll('.nav__theme-toggle');
   toggleButtons.forEach(button => {
     button.addEventListener('click', toggleTheme);
   });
+
+  // Set up mobile header toggle button
+  const mobileHeaderToggle = document.querySelector('.nav__theme-toggle--mobile-header');
+  if (mobileHeaderToggle) {
+    mobileHeaderToggle.addEventListener('click', toggleTheme);
+  }
 
   // Listen for system preference changes
   if (window.matchMedia) {
