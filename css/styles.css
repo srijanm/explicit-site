@@ -2311,3 +2311,21 @@ button:focus-visible {
 .case-nav__link--next {
   margin-left: auto;
 }
+
+/* Case Nav Mobile Styles */
+@media (max-width: 600px) {
+  .case-nav {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .case-nav__link {
+    width: 100%;
+    text-align: center;
+    padding: var(--space-md);
+  }
+
+  .case-nav__link--next {
+    margin-left: 0;
+  }
+}
