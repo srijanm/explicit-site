@@ -219,7 +219,6 @@ button:focus-visible {
   width: 44px;
   height: 44px;
   padding: 0;
-  font-size: 1.25rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -229,6 +228,23 @@ button:focus-visible {
 
 .nav__theme-toggle--mobile-header:hover {
   opacity: 0.7;
+}
+
+/* Theme icons in mobile toggle */
+.theme-icon {
+  display: none;
+}
+
+.theme-icon--sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-icon--sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon--moon {
+  display: block;
 }
 
 @media (min-width: 768px) {
@@ -249,8 +265,9 @@ button:focus-visible {
 /* Mobile controls wrapper */
 .nav__mobile-controls {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 0;
+  gap: var(--space-xs);
 }
 
 @media (min-width: 768px) {
@@ -1161,6 +1178,24 @@ button:focus-visible {
   justify-content: space-between;
   align-items: center;
   gap: var(--space-sm);
+}
+
+@media (max-width: 480px) {
+  .footer__content {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .footer__brand {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-xs);
+  }
+
+  .footer__social {
+    justify-content: center;
+  }
 }
 
 .footer__info {

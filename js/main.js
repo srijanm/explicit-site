@@ -47,29 +47,17 @@ function setTheme(theme) {
     label.textContent = theme;
   });
 
-  // Update mobile header theme toggle icon
-  const mobileToggle = document.querySelector('.nav__theme-toggle--mobile-header');
-  if (mobileToggle) {
-    mobileToggle.textContent = theme === 'light' ? '☀' : '☾';
-  }
-
   // Save to localStorage
   localStorage.setItem(STORAGE_KEY, theme);
 }
 
 /**
- * Toggle between dark and light themes with subtle flicker effect
+ * Toggle between dark and light themes
  */
 function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-  // Subtle flicker effect
-  document.body.style.opacity = '0.95';
-  setTimeout(() => {
-    setTheme(newTheme);
-    document.body.style.opacity = '1';
-  }, 50);
+  setTheme(newTheme);
 }
 
 /**
