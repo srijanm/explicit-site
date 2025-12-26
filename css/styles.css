@@ -1134,6 +1134,40 @@ button:focus-visible {
   color: var(--accent);
 }
 
+/* Inverted accent button - swaps light/dark mode accent colors */
+.cta__button--inverted {
+  background-color: #0103F5;
+  border-color: #0103F5;
+  color: #F5F5F1;
+}
+
+.cta__button--inverted:hover {
+  background-color: transparent;
+  color: #0103F5;
+}
+
+[data-theme="light"] .cta__button--inverted {
+  background-color: #00FF41;
+  border-color: #00FF41;
+  color: #000;
+}
+
+[data-theme="light"] .cta__button--inverted:hover {
+  background-color: transparent;
+  color: #00FF41;
+}
+
+/* Hero subtext button spacing */
+.hero__subtext .cta__button {
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .hero__subtext .cta__button {
+    margin-top: var(--space-lg);
+  }
+}
+
 @media (max-width: 640px) {
   .cta__content {
     flex-direction: column;
