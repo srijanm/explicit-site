@@ -149,7 +149,18 @@
       newton.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
+        e.stopImmediatePropagation();
         registerEgg('taste', "Ah, you have taste.\n(Everyone says that now.)");
+        return false;
+      }, true); // Use capture phase to catch event before parent links
+    });
+
+    // Also prevent the parent marquee-link from navigating when Newton is clicked
+    document.querySelectorAll('.marquee-link').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        if (e.target.classList.contains('egg-newton')) {
+          e.preventDefault();
+        }
       });
     });
 
