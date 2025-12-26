@@ -157,8 +157,9 @@ function initEasterEggModal() {
 
   if (!trigger || !modal) return;
 
-  // Open modal on click
-  trigger.addEventListener('click', () => {
+  // Open modal on click/touch
+  function openModal(e) {
+    e.preventDefault();
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 
@@ -169,7 +170,10 @@ function initEasterEggModal() {
         // Audio play failed (autoplay policy), ignore silently
       });
     }
-  });
+  }
+
+  trigger.addEventListener('click', openModal);
+  trigger.addEventListener('touchend', openModal);
 
   // Close modal functions
   function closeModal() {
@@ -185,22 +189,32 @@ function initEasterEggModal() {
   // OK button closes modal
   if (okBtn) {
     okBtn.addEventListener('click', closeModal);
+    okBtn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      closeModal();
+    });
   }
 
   // Help button closes modal and opens email
   if (helpBtn) {
-    helpBtn.addEventListener('click', () => {
+    function handleHelp(e) {
+      e.preventDefault();
       closeModal();
       window.location.href = 'mailto:hello@explicit.studio';
-    });
+    }
+    helpBtn.addEventListener('click', handleHelp);
+    helpBtn.addEventListener('touchend', handleHelp);
   }
 
-  // Click on overlay closes modal
-  modal.addEventListener('click', (e) => {
+  // Click/touch on overlay closes modal
+  function handleOverlayClose(e) {
     if (e.target === modal) {
+      e.preventDefault();
       closeModal();
     }
-  });
+  }
+  modal.addEventListener('click', handleOverlayClose);
+  modal.addEventListener('touchend', handleOverlayClose);
 
   // Escape key closes modal
   document.addEventListener('keydown', (e) => {

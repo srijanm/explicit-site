@@ -2504,9 +2504,15 @@ button:focus-visible {
 }
 
 .egg-popup-btn:hover,
+.egg-popup-btn:active,
 .egg-popup-btn.primary {
   background: var(--accent);
   color: var(--bg-primary);
+}
+
+.egg-popup-btn {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 /* Gong Icon */
@@ -2561,4 +2567,40 @@ button:focus-visible {
 
 .egg-newton:hover {
   filter: brightness(1.2) drop-shadow(0 0 8px var(--accent));
+}
+
+/* Mobile touch fixes for easter eggs */
+.egg-gong,
+.egg-ship,
+.egg-newton,
+.easter-egg-die {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Ensure inverted button colors work on all devices */
+.cta__button.cta__button--inverted {
+  background-color: #0103F5 !important;
+  border-color: #0103F5 !important;
+  color: #F5F5F1 !important;
+}
+
+[data-theme="light"] .cta__button.cta__button--inverted {
+  background-color: #00FF41 !important;
+  border-color: #00FF41 !important;
+  color: #000 !important;
+}
+
+.cta__button.cta__button--inverted:hover,
+.cta__button.cta__button--inverted:active {
+  background-color: transparent !important;
+  color: #0103F5 !important;
+}
+
+[data-theme="light"] .cta__button.cta__button--inverted:hover,
+[data-theme="light"] .cta__button.cta__button--inverted:active {
+  background-color: transparent !important;
+  color: #00FF41 !important;
 }

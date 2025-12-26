@@ -112,6 +112,28 @@
   };
 
   // Initialize on page load
+  // Helper to add both click and touch handlers for mobile compatibility
+  function addTapHandler(element, handler, useCapture) {
+    if (!element) return;
+
+    // Track to prevent double-firing
+    let lastTap = 0;
+
+    function wrappedHandler(e) {
+      const now = Date.now();
+      if (now - lastTap < 300) return; // Debounce
+      lastTap = now;
+      handler.call(this, e);
+    }
+
+    element.addEventListener('click', wrappedHandler, useCapture || false);
+    // Add touchend for mobile devices that might not fire click properly
+    element.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      wrappedHandler.call(this, e);
+    }, useCapture || false);
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     // Initialize counter
     updateCounter();
@@ -119,7 +141,10 @@
     // Gong click
     const gong = document.getElementById('eggGong');
     if (gong) {
-      gong.addEventListener('click', function() {
+      addTapHandler(gong, function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
         // Play sound
         const audio = new Audio('/assets/audio/gong.mp3');
         audio.volume = 0.5;
@@ -129,7 +154,8 @@
 
         // Animate
         this.style.animation = 'shake 0.5s ease';
-        setTimeout(() => { this.style.animation = ''; }, 500);
+        var self = this;
+        setTimeout(function() { self.style.animation = ''; }, 500);
 
         // Register
         registerEgg('gong', "If you know, you know.");
@@ -139,14 +165,16 @@
     // Ship click
     const ship = document.getElementById('eggShip');
     if (ship) {
-      ship.addEventListener('click', function() {
+      addTapHandler(ship, function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         registerEgg('ship', "Finally, someone who ships.\nRespect.");
       });
     }
 
     // Newton clicks (multiple in marquee and hero)
     document.querySelectorAll('.egg-newton').forEach(function(newton) {
-      newton.addEventListener('click', function(e) {
+      addTapHandler(newton, function(e) {
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -164,14 +192,17 @@
       });
     });
 
-    // Close popup on overlay click
+    // Close popup on overlay click/touch
     const eggPopup = document.getElementById('eggPopup');
     if (eggPopup) {
-      eggPopup.addEventListener('click', function(e) {
-        if (e.target === this) {
+      function handlePopupClose(e) {
+        if (e.target === eggPopup) {
+          e.preventDefault();
           closeEggPopup();
         }
-      });
+      }
+      eggPopup.addEventListener('click', handlePopupClose);
+      eggPopup.addEventListener('touchend', handlePopupClose);
     }
 
     // Close popup on Escape
