@@ -1,13 +1,6 @@
 // Explicit site scripts
 
 // ========================================
-// CONSOLE EASTER EGG
-// ========================================
-console.log("%c> Hey, you're poking around.", "color: #B8FDA1; font-family: monospace;");
-console.log("%c> We like that.", "color: #B8FDA1; font-family: monospace;");
-console.log("%c> If you're building something interesting: hello@explicit.studio", "color: #B8FDA1; font-family: monospace;");
-
-// ========================================
 // THEME TOGGLE
 // ========================================
 
@@ -182,6 +175,11 @@ function initEasterEggModal() {
   function closeModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
+
+    // Register DIE easter egg
+    if (typeof registerEgg === 'function') {
+      registerEgg('die', "You're paying attention.\nMost people scroll past.");
+    }
   }
 
   // OK button closes modal

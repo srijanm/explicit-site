@@ -109,7 +109,7 @@ Say hi: hello@explicit.studio
           </div>
           <div class="hero__slideshow">
             <div class="hero__slideshow-track">
-              <img src="assets/images/graveyard/apple-newton.png" alt="Apple Newton" class="hero__slide active" data-name="Apple Newton" data-epitaph="Ahead of its time. Became a punchline." width="400" height="400" fetchpriority="high" decoding="async">
+              <img src="assets/images/graveyard/apple-newton.png" alt="Apple Newton" class="hero__slide active egg-newton" data-name="Apple Newton" data-epitaph="Ahead of its time. Became a punchline." width="400" height="400" fetchpriority="high" decoding="async">
               <img src="assets/images/graveyard/zune.png" alt="Microsoft Zune" class="hero__slide" data-name="Microsoft Zune" data-epitaph="Good product. 'Squirting' songs." width="400" height="400" loading="lazy">
               <img src="assets/images/graveyard/sega-dreamcast.png" alt="Sega Dreamcast" class="hero__slide" data-name="Sega Dreamcast" data-epitaph="PlayStation 2's hype machine won." width="400" height="400" loading="lazy">
               <img src="assets/images/graveyard/friendster.png" alt="Friendster" class="hero__slide" data-name="Friendster" data-epitaph="Had 3 million users. MySpace told a better story." width="400" height="400" loading="lazy">
@@ -197,7 +197,7 @@ Say hi: hello@explicit.studio
             <span>SONY MINIDISC</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/apple-newton.png" alt="Apple Newton" width="80" height="80" loading="lazy">
+            <img src="assets/images/graveyard/apple-newton.png" alt="Apple Newton" class="egg-newton" width="80" height="80" loading="lazy">
             <span>APPLE NEWTON</span>
           </div>
           <div class="marquee__item">
@@ -254,7 +254,7 @@ Say hi: hello@explicit.studio
             <span>SONY MINIDISC</span>
           </div>
           <div class="marquee__item">
-            <img src="assets/images/graveyard/apple-newton.png" alt="Apple Newton" width="80" height="80" loading="lazy">
+            <img src="assets/images/graveyard/apple-newton.png" alt="Apple Newton" class="egg-newton" width="80" height="80" loading="lazy">
             <span>APPLE NEWTON</span>
           </div>
           <div class="marquee__item">
@@ -272,7 +272,7 @@ Say hi: hello@explicit.studio
     <!-- Bridge Section -->
     <section class="bridge animate-on-scroll">
       <div class="bridge__content">
-        <p class="bridge__text">Because <span class="highlight">100,000</span> startups <span class="easter-egg-die">die</span> every year.</p>
+        <p class="bridge__text">Because <span class="highlight">100,000</span> startups <span class="easter-egg-die">die</span> every year. <span class="egg-gong" id="eggGong">🔔</span></p>
         <p class="bridge__text">But <span class="highlight">stories live forever.</span></p>
         <p class="bridge__text">We tell <span class="highlight">stories that sell</span> &amp; support early stage teams by aligning narratives, GTM design and advertising.</p>
       </div>
@@ -458,7 +458,7 @@ Say hi: hello@explicit.studio
 
     <!-- Work Section -->
     <section class="work animate-on-scroll">
-      <h2 class="work__header">We don't do only strategy, we ship</h2>
+      <h2 class="work__header">We don't do only strategy, we <span class="egg-ship" id="eggShip">ship</span></h2>
       <div class="work__scroll">
         <div class="work__track">
           <a href="/work/pause.html" class="work__item">
@@ -639,6 +639,23 @@ Say hi: hello@explicit.studio
   <audio id="errorSound" preload="auto">
     <source src="assets/sounds/error.mp3" type="audio/mpeg">
   </audio>
+
+  <!-- Easter Egg Counter -->
+  <div class="egg-counter" id="eggCounter">[found: 0/5]</div>
+
+  <!-- Easter Egg Popup -->
+  <div class="egg-popup-overlay" id="eggPopup">
+    <div class="egg-popup">
+      <div class="egg-popup-header">> FOUND [0/5]</div>
+      <div class="egg-popup-message"></div>
+      <div class="egg-popup-buttons">
+        <button class="egg-popup-btn" onclick="closeEggPopup()">CONTINUE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Easter Egg Scripts -->
+  <script src="js/easter-eggs.js"></script>
 
 </body>
 </html>
