@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate — EXPLICIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/certificate.css">
+</head>
+<body>
+  <div class="certificate-container">
+
+    <!-- Term Sheet Section -->
+    <div class="term-sheet">
+      <div class="term-sheet-header">
+        <p class="company-name">EXPLICIT CREATIVE STUDIO</p>
+        <h1>TERM SHEET</h1>
+        <p class="round-name">Series E (Easter Egg) Preferred Status</p>
+      </div>
+
+      <div class="term-sheet-body">
+        <div class="term-row">
+          <span class="term-label">INVESTOR</span>
+          <span class="term-value" id="investorName">—</span>
+        </div>
+
+        <div class="term-row">
+          <span class="term-label">HANDLE</span>
+          <span class="term-value" id="investorHandle">@—</span>
+        </div>
+
+        <div class="term-row">
+          <span class="term-label">DATE</span>
+          <span class="term-value" id="claimDate">—</span>
+        </div>
+
+        <div class="term-row">
+          <span class="term-label">ROUND</span>
+          <span class="term-value">Early Believer</span>
+        </div>
+
+        <div class="term-section">
+          <h3>VALUATION</h3>
+          <div class="term-row">
+            <span class="term-label">Pre-scroll Attention</span>
+            <span class="term-value">Exceptional</span>
+          </div>
+          <div class="term-row">
+            <span class="term-label">Post-hunt Status</span>
+            <span class="term-value">Verified</span>
+          </div>
+        </div>
+
+        <div class="term-section">
+          <h3>PARTICIPATION</h3>
+          <div class="term-row">
+            <span class="term-label">Eggs Found</span>
+            <span class="term-value" id="eggsFound">—/5</span>
+          </div>
+        </div>
+
+        <div class="term-section">
+          <h3>LIQUIDATION PREFERENCE</h3>
+          <p class="term-note">None. This certificate has no monetary value.</p>
+        </div>
+
+        <div class="term-section">
+          <h3>PRO RATA RIGHTS</h3>
+          <p class="term-note">Early access to future Explicit drops and content.</p>
+        </div>
+
+        <div class="term-section">
+          <h3>ANTI-DILUTION</h3>
+          <p class="term-note">This status is non-transferable.<br>This spot cannot be taken. It can only be forgotten.</p>
+        </div>
+
+        <div class="term-section">
+          <h3>GOVERNANCE</h3>
+          <p class="term-note">No voting rights. No equity. No refunds.</p>
+        </div>
+      </div>
+
+      <div class="term-sheet-footer">
+        <div class="signature-line"></div>
+        <p>Explicit Creative Studio</p>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="certificate-actions">
+      <button class="action-btn primary" id="shareBtn">[TWEET/XEET]</button>
+      <button class="action-btn" id="downloadBtn">[DOWNLOAD GOLDEN TICKET]</button>
+    </div>
+
+    <p class="certificate-note">Want the physical golden egg? <a href="#" id="emailLink">Leave your email</a></p>
+
+    <!-- Share Modal (Two-Step) -->
+    <div class="share-modal" id="shareModal">
+      <div class="share-modal-content">
+        <h3>Share your golden ticket</h3>
+
+        <div class="share-step" id="shareStep1">
+          <p class="step-label">Step 1</p>
+          <p>Download your golden ticket first</p>
+          <button class="action-btn primary" id="modalDownloadBtn">[DOWNLOAD TICKET]</button>
+        </div>
+
+        <div class="share-step" id="shareStep2">
+          <p class="step-label">Step 2</p>
+          <p>Now share to X (attach your ticket)</p>
+          <button class="action-btn primary" id="modalShareBtn">[OPEN X]</button>
+        </div>
+
+        <button class="action-btn close-btn" id="closeShareModal">[CLOSE]</button>
+      </div>
+    </div>
+
+    <!-- Email Modal -->
+    <div class="email-modal" id="emailModal">
+      <div class="email-modal-content">
+        <h3>Get the physical egg</h3>
+        <p>We'll send a real golden egg to the first 25 Early Believers.</p>
+        <input type="email" id="emailInput" placeholder="your@email.com">
+        <button class="action-btn primary" id="submitEmail">[SUBMIT]</button>
+        <button class="action-btn" id="closeModal">[CLOSE]</button>
+      </div>
+    </div>
+
+    <!-- Hidden Golden Ticket for Download -->
+    <div class="golden-ticket-wrapper" id="goldenTicket">
+      <img src="assets/images/golden-ticket-bg.png" alt="Golden Ticket" class="ticket-bg">
+      <div class="ticket-text" id="ticketText">
+        <!-- Dynamic: Name (@handle) -->
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="js/certificate.js"></script>
+</body>
+</html>

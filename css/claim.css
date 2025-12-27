@@ -1,0 +1,136 @@
+/* Claim Page Styles */
+
+.claim-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.claim-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.claim-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.claim-header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.claim-subtitle {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.claim-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-family: inherit;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.form-group input::placeholder {
+  opacity: 0.4;
+}
+
+.handle-input-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.handle-prefix {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  border: 1px solid var(--accent);
+  border-right: none;
+}
+
+.handle-input-wrapper input {
+  border-left: none;
+  flex: 1;
+}
+
+.claim-btn {
+  width: 100%;
+  padding: 18px 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: 1px solid var(--accent);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 16px;
+}
+
+.claim-btn:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.claim-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.claim-footer {
+  margin-top: 32px;
+  font-size: 12px;
+  opacity: 0.5;
+  text-align: center;
+}
+
+/* Error state */
+.form-group.error input {
+  border-color: #ff4444;
+}
+
+.form-group .error-message {
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: 8px;
+}
