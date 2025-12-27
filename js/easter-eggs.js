@@ -146,7 +146,7 @@
         e.stopPropagation();
 
         // Play sound
-        const audio = new Audio('/assets/audio/gong.mp3');
+        const audio = new Audio('/assets/sounds/gong.mp3');
         audio.volume = 0.5;
         audio.play().catch(function() {
           // Audio play failed (autoplay policy), still register the egg
@@ -158,7 +158,7 @@
         setTimeout(function() { self.style.animation = ''; }, 500);
 
         // Register
-        registerEgg('gong', "If you know, you know.");
+        registerEgg('gong', "TBPN-iykyk");
       });
     }
 
