@@ -1,4 +1,4 @@
-// Certificate Page Logic (Simplified)
+// Certificate Page Logic (Simplified - No Email Modal)
 
 (function() {
   var CLAIM_DATA_KEY = 'explicit-claim-data';
@@ -30,46 +30,6 @@
     document.getElementById('investorHandle').textContent = '@' + data.handle;
     document.getElementById('claimDate').textContent = formatDate(data.claimedAt);
     document.getElementById('eggsFound').textContent = data.eggsFound + '/5';
-
-    // Email modal handlers
-    document.getElementById('emailBtn').addEventListener('click', openEmailModal);
-    document.getElementById('closeModal').addEventListener('click', closeEmailModal);
-    document.getElementById('submitEmail').addEventListener('click', submitEmail);
-
-    document.getElementById('emailModal').addEventListener('click', function(e) {
-      if (e.target === this) closeEmailModal();
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeEmailModal();
-      }
-    });
-  }
-
-  function openEmailModal() {
-    document.getElementById('emailModal').classList.add('active');
-  }
-
-  function closeEmailModal() {
-    document.getElementById('emailModal').classList.remove('active');
-  }
-
-  function submitEmail() {
-    var email = document.getElementById('emailInput').value.trim();
-
-    if (!email || !email.includes('@')) {
-      alert('Please enter a valid email.');
-      return;
-    }
-
-    var data = getClaimData();
-    data.email = email;
-    localStorage.setItem(CLAIM_DATA_KEY, JSON.stringify(data));
-
-    alert("Got it! We'll be in touch.");
-    closeEmailModal();
   }
 
   document.addEventListener('DOMContentLoaded', init);

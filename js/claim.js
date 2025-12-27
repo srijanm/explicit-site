@@ -47,10 +47,17 @@
 
     var name = document.getElementById('name').value.trim();
     var handle = document.getElementById('handle').value.trim().replace('@', '');
+    var email = document.getElementById('email').value.trim();
     var eggs = getFoundEggs();
 
-    if (!name || !handle) {
+    if (!name || !handle || !email) {
       alert('Please fill in all fields.');
+      return;
+    }
+
+    // Basic email validation
+    if (!email.includes('@')) {
+      alert('Please enter a valid email.');
       return;
     }
 
@@ -59,10 +66,11 @@
     btn.disabled = true;
     btn.textContent = '[CLAIMING...]';
 
-    // Store claim data
+    // Store claim data (now includes email)
     var claimData = {
       name: name,
       handle: handle,
+      email: email,
       eggsFound: eggs.length,
       eggs: eggs,
       claimedAt: new Date().toISOString()

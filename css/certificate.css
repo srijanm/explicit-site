@@ -7,22 +7,6 @@
   margin: 0 auto;
 }
 
-/* Logo */
-.certificate-logo {
-  text-align: center;
-  margin-bottom: 32px;
-  padding-top: 24px;
-}
-
-.certificate-logo .logo {
-  max-width: 150px;
-  height: auto;
-}
-
-.certificate-logo a {
-  display: inline-block;
-}
-
 /* Term Sheet */
 .term-sheet {
   border: 1px solid var(--accent);
@@ -37,12 +21,10 @@
   border-bottom: 1px solid var(--accent);
 }
 
-.term-sheet-header .company-name {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  opacity: 0.7;
-  margin-bottom: 8px;
+.term-sheet-header .header-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 16px;
 }
 
 .term-sheet-header h1 {
@@ -58,18 +40,20 @@
 
 /* Golden Ticket Display */
 .golden-ticket-display {
-  margin: 32px 0;
+  margin: 24px 0;
   text-align: center;
+  padding: 0 16px;
 }
 
 .golden-ticket-display .ticket-image {
   max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: 4px;
+  display: block;
 }
 
 .term-sheet-body {
-  margin-bottom: 32px;
+  margin-bottom: 0;
 }
 
 .term-row {
@@ -116,34 +100,16 @@
   opacity: 0.8;
 }
 
-.term-sheet-footer {
-  text-align: center;
-  padding-top: 24px;
-}
-
-.signature-line {
-  width: 200px;
-  height: 1px;
-  background: var(--text-primary);
-  margin: 0 auto 12px;
-}
-
-.term-sheet-footer p {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  opacity: 0.7;
-}
-
 /* Action Buttons */
 .certificate-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
   margin-top: 32px;
 }
 
-.action-btn {
+.certificate-actions .action-btn {
+  display: block;
   width: 100%;
+  text-align: center;
+  text-decoration: none;
   padding: 18px 24px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 14px;
@@ -152,86 +118,12 @@
   border: 1px solid var(--accent);
   cursor: pointer;
   transition: all 0.2s ease;
-  text-align: center;
-  text-decoration: none;
-}
-
-.action-btn:hover,
-.action-btn.primary {
-  background: var(--accent);
-  color: var(--bg-primary);
-}
-
-.action-btn.primary:hover {
-  background: transparent;
-  color: var(--accent);
-}
-
-.action-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* Email Modal */
-.email-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-.email-modal.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.email-modal-content {
-  background: var(--bg-primary);
-  border: 1px solid var(--accent);
-  padding: 32px;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-}
-
-.email-modal-content h3 {
-  margin-bottom: 24px;
-}
-
-.email-modal-content p {
-  font-size: 14px;
-  opacity: 0.7;
-  margin-bottom: 16px;
-}
-
-.email-modal-content input {
-  width: 100%;
-  padding: 16px;
-  font-size: 16px;
-  font-family: inherit;
-  background: transparent;
-  border: 1px solid var(--accent);
-  color: var(--text-primary);
-  margin-bottom: 16px;
-  outline: none;
   box-sizing: border-box;
 }
 
-.email-modal-content input:focus {
-  box-shadow: 0 0 0 2px var(--accent);
-}
-
-.email-modal-content .action-btn {
-  margin-bottom: 8px;
+.certificate-actions .action-btn:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
 }
 
 /* Mobile adjustments */

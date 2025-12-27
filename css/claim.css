@@ -72,6 +72,12 @@
   opacity: 0.4;
 }
 
+.field-note {
+  font-size: 12px;
+  opacity: 0.5;
+  margin-top: 8px;
+}
+
 .handle-input-wrapper {
   display: flex;
   align-items: stretch;
