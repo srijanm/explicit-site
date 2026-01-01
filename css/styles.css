@@ -726,6 +726,24 @@ button:focus-visible {
   margin-top: var(--space-md);
 }
 
+.bridge__list {
+  margin: var(--space-md) 0;
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+
+.bridge__list li {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+  opacity: 0.8;
+}
+
+.bridge__list li:last-child {
+  margin-bottom: 0;
+}
+
 .easter-egg-die {
   color: var(--accent);
   cursor: pointer;
