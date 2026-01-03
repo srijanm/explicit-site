@@ -1,14 +1,14 @@
-// Claim Page Logic
+// Claim Page Logic with Formspree Integration
 
 (function() {
-  var STORAGE_KEY = 'explicit-eggs';
-  var CLAIMED_KEY = 'explicit-claimed';
-  var CLAIM_DATA_KEY = 'explicit-claim-data';
-  var MIN_EGGS = 3;
+  const STORAGE_KEY = 'explicit-eggs';
+  const CLAIMED_KEY = 'explicit-claimed';
+  const CLAIM_DATA_KEY = 'explicit-claim-data';
+  const MIN_EGGS = 3;
 
-  // Get found eggs
+  // Get found eggs from localStorage
   function getFoundEggs() {
-    var stored = localStorage.getItem(STORAGE_KEY);
+    const stored = localStorage.getItem(STORAGE_KEY);
     return stored ? JSON.parse(stored) : [];
   }
 
@@ -17,12 +17,24 @@
     return localStorage.getItem(CLAIMED_KEY) === 'true';
   }
 
+  // Populate hidden fields with egg data
+  function populateHiddenFields() {
+    const eggs = getFoundEggs();
+
+    document.getElementById('eggsFound').value = eggs.length;
+    document.getElementById('eggsArray').value = eggs.join(', ');
+    document.getElementById('claimedAt').value = new Date().toISOString();
+  }
+
   // Initialize page
   function init() {
-    var eggs = getFoundEggs();
+    const eggs = getFoundEggs();
 
     // Update egg count display
-    document.getElementById('eggCount').textContent = eggs.length;
+    const eggCountEl = document.getElementById('eggCount');
+    if (eggCountEl) {
+      eggCountEl.textContent = eggs.length;
+    }
 
     // Redirect if not enough eggs
     if (eggs.length < MIN_EGGS) {
@@ -37,6 +49,9 @@
       return;
     }
 
+    // Populate hidden fields
+    populateHiddenFields();
+
     // Setup form submission
     document.getElementById('claimForm').addEventListener('submit', handleSubmit);
   }
@@ -45,44 +60,69 @@
   function handleSubmit(e) {
     e.preventDefault();
 
-    var name = document.getElementById('name').value.trim();
-    var handle = document.getElementById('handle').value.trim().replace('@', '');
-    var email = document.getElementById('email').value.trim();
-    var eggs = getFoundEggs();
+    const form = e.target;
+    const name = document.getElementById('name').value.trim();
+    const handle = document.getElementById('handle').value.trim().replace('@', '');
+    const email = document.getElementById('email').value.trim();
+    const eggs = getFoundEggs();
 
+    // Validation
     if (!name || !handle || !email) {
       alert('Please fill in all fields.');
       return;
     }
 
-    // Basic email validation
     if (!email.includes('@')) {
       alert('Please enter a valid email.');
       return;
     }
 
     // Disable button
-    var btn = document.querySelector('.claim-btn');
+    const btn = document.querySelector('.claim-btn');
     btn.disabled = true;
     btn.textContent = '[CLAIMING...]';
 
-    // Store claim data (now includes email)
-    var claimData = {
-      name: name,
-      handle: handle,
-      email: email,
-      eggsFound: eggs.length,
-      eggs: eggs,
-      claimedAt: new Date().toISOString()
-    };
+    // Prepare form data for Formspree
+    const formData = new FormData(form);
 
-    localStorage.setItem(CLAIM_DATA_KEY, JSON.stringify(claimData));
-    localStorage.setItem(CLAIMED_KEY, 'true');
+    // Update handle field to remove @ if user typed it
+    formData.set('handle', handle);
 
-    // Redirect to certificate
-    setTimeout(function() {
-      window.location.href = '/certificate.html';
-    }, 500);
+    // Submit to Formspree
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        // Save to localStorage for certificate page
+        const claimData = {
+          name: name,
+          handle: handle,
+          email: email,
+          eggsFound: eggs.length,
+          eggs: eggs,
+          claimedAt: new Date().toISOString()
+        };
+
+        localStorage.setItem(CLAIM_DATA_KEY, JSON.stringify(claimData));
+        localStorage.setItem(CLAIMED_KEY, 'true');
+
+        // Redirect to certificate
+        window.location.href = '/certificate.html';
+      } else {
+        throw new Error('Form submission failed');
+      }
+    })
+    .catch(function(error) {
+      console.error('Error:', error);
+      alert('Something went wrong. Please try again.');
+      btn.disabled = false;
+      btn.textContent = '[CLAIM YOUR SPOT]';
+    });
   }
 
   // Run on DOM ready

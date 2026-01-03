@@ -25,7 +25,13 @@
       <p class="claim-subtitle">First 25 become Early Believers.</p>
     </div>
 
-    <form id="claimForm" class="claim-form">
+    <form
+      action="https://formspree.io/f/mlgddwdp"
+      method="POST"
+      id="claimForm"
+      class="claim-form"
+    >
+      <!-- User Input Fields -->
       <div class="form-group">
         <label for="name">Name</label>
         <input
@@ -65,6 +71,11 @@
         >
         <p class="field-note">We'll use this to send you the physical golden egg.</p>
       </div>
+
+      <!-- Hidden Fields (auto-populated by JavaScript) -->
+      <input type="hidden" id="eggsFound" name="eggsFound">
+      <input type="hidden" id="eggsArray" name="eggsArray">
+      <input type="hidden" id="claimedAt" name="claimedAt">
 
       <button type="submit" class="claim-btn">[CLAIM YOUR SPOT]</button>
     </form>

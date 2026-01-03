@@ -262,6 +262,7 @@ function initScrollAnimations() {
 /**
  * Initialize the hero image slideshow
  * Images can be easily changed by modifying the HTML
+ * Supports auto-advance and swipe gestures
  */
 function initHeroSlideshow() {
   const slideshow = document.querySelector('.hero__slideshow');
@@ -272,34 +273,109 @@ function initHeroSlideshow() {
 
   const nameEl = slideshow.querySelector('.hero__slideshow-name');
   const epitaphEl = slideshow.querySelector('.hero__slideshow-epitaph');
+  const slideshowLink = slideshow.querySelector('.hero__slideshow-link');
 
   let currentIndex = 0;
   const intervalTime = 3000; // 3 seconds per slide
+  let autoAdvance;
 
   function updateCaption(slide) {
     if (!nameEl || !epitaphEl) return;
     const name = slide.dataset.name || '';
-    const epitaph = slide.dataset.epitaph || '';
+    const desc = slide.dataset.desc || slide.dataset.epitaph || '';
     nameEl.textContent = name;
-    epitaphEl.textContent = epitaph ? `"${epitaph}"` : '';
+    epitaphEl.textContent = desc;
   }
 
-  function showNextSlide() {
+  function updateLink(slide) {
+    if (!slideshowLink) return;
+    const link = slide.dataset.link || '#';
+    slideshowLink.href = link;
+    // Handle external links
+    if (link.startsWith('http')) {
+      slideshowLink.target = '_blank';
+      slideshowLink.rel = 'noopener noreferrer';
+    } else {
+      slideshowLink.target = '';
+      slideshowLink.rel = '';
+    }
+  }
+
+  function showSlide(index) {
     // Remove active class from current slide
     slides[currentIndex].classList.remove('active');
 
-    // Move to next slide (loop back to start if at end)
-    currentIndex = (currentIndex + 1) % slides.length;
+    // Update index
+    currentIndex = index;
+    if (currentIndex >= slides.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = slides.length - 1;
 
     // Add active class to new slide
     slides[currentIndex].classList.add('active');
 
-    // Update caption
+    // Update caption and link
     updateCaption(slides[currentIndex]);
+    updateLink(slides[currentIndex]);
   }
 
+  function showNextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function showPrevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  // Start auto-advance
+  function startAutoAdvance() {
+    autoAdvance = setInterval(showNextSlide, intervalTime);
+  }
+
+  function resetAutoAdvance() {
+    clearInterval(autoAdvance);
+    startAutoAdvance();
+  }
+
+  // Initialize first slide
+  updateCaption(slides[0]);
+  updateLink(slides[0]);
+
   // Start the slideshow
-  setInterval(showNextSlide, intervalTime);
+  startAutoAdvance();
+
+  // Swipe gesture support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const swipeThreshold = 50;
+
+  slideshow.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  slideshow.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swipe left - next slide
+        showNextSlide();
+      } else {
+        // Swipe right - previous slide
+        showPrevSlide();
+      }
+      resetAutoAdvance();
+    }
+  }, { passive: true });
+
+  // Click on track advances slide (but still follows link)
+  const track = slideshow.querySelector('.hero__slideshow-track');
+  if (track) {
+    track.addEventListener('click', () => {
+      showNextSlide();
+      resetAutoAdvance();
+    });
+  }
 }
 
 // ========================================
