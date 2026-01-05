@@ -2784,28 +2784,30 @@ button:focus-visible {
 }
 
 .value-prop__list {
-  font-family: var(--font-heading);
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.8;
-  color: var(--text-secondary);
   list-style: disc;
   padding-left: 1.25em;
   margin: 0;
 }
 
 .value-prop__list li {
-  margin-bottom: 0.5em;
-}
-
-.value-prop__list li:last-child {
-  margin-bottom: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 @media (min-width: 900px) {
-  .value-prop__list {
+  .value-prop__list li {
     font-size: calc(clamp(1rem, 2vw, 1.25rem) + 4px);
+  }
+}
+
+@media (max-width: 899px) {
+  .value-prop__list li {
+    font-size: 17px;
+    font-weight: 450;
   }
 }
 
