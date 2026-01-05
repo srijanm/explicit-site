@@ -22,7 +22,7 @@
 
   <!-- Critical CSS -->
   <style>
-    :root{--bg-primary:#F5F5F1;--bg-secondary:#EDEDEA;--text-primary:#272727;--text-secondary:#5a5a5a;--accent:#0103F5;--font-body:'JetBrains Mono',monospace;--font-heading:'Inter',sans-serif;--space-xs:.5rem;--space-sm:1rem;--space-md:2rem;--space-lg:4rem;--space-xl:8rem;--container-max:1200px;--container-padding:var(--space-md)}[data-theme="dark"]{--bg-primary:#000;--bg-secondary:#0a0a0a;--text-primary:#F3F2ED;--text-secondary:#a8a8a0;--accent:#00FF41}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);font-weight:400;font-size:1rem;background-color:var(--bg-primary);color:var(--text-primary);line-height:1.6}.header{position:fixed;top:0;left:0;right:0;z-index:100}.nav{display:flex;align-items:center;justify-content:space-between;padding:var(--space-sm) var(--container-padding);max-width:var(--container-max);margin:0 auto}.nav__logo{display:flex;align-items:center;color:var(--accent);text-decoration:none}.nav__logo-svg{height:24px;width:auto;fill:currentColor}.nav__links{display:none;list-style:none;gap:var(--space-md)}@media(min-width:768px){.nav__links{display:flex}}.nav__links a{color:var(--text-secondary);font-size:.875rem;text-decoration:none}.animate-on-scroll{opacity:0;contain:layout style}.animate-on-scroll.is-visible{opacity:1}.animate-on-load{opacity:0}.theme-label{display:inline-block;min-width:32px}.nav__mobile-overlay{opacity:0;visibility:hidden;position:fixed;top:0;left:0;right:0;bottom:0}.modal-overlay{opacity:0;pointer-events:none;position:fixed;top:0;left:0;right:0;bottom:0}
+    :root{--bg-primary:#F5F5F1;--bg-secondary:#EDEDEA;--text-primary:#272727;--text-secondary:#5a5a5a;--accent:#0103F5;--font-body:'JetBrains Mono',monospace;--font-heading:'Inter',sans-serif;--space-xs:.5rem;--space-sm:1rem;--space-md:2rem;--space-lg:4rem;--space-xl:8rem;--container-max:1200px;--container-padding:var(--space-md)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);font-weight:400;font-size:1rem;background-color:var(--bg-primary);color:var(--text-primary);line-height:1.6}.header{position:fixed;top:0;left:0;right:0;z-index:100}.nav{display:flex;align-items:center;justify-content:space-between;padding:var(--space-sm) var(--container-padding);max-width:var(--container-max);margin:0 auto}.nav__logo{display:flex;align-items:center;color:var(--accent);text-decoration:none}.nav__logo-svg{height:24px;width:auto;fill:currentColor}.nav__links{display:none;list-style:none;gap:var(--space-md)}@media(min-width:768px){.nav__links{display:flex}}.nav__links a{color:var(--text-secondary);font-size:.875rem;text-decoration:none}.animate-on-scroll{opacity:0;contain:layout style}.animate-on-scroll.is-visible{opacity:1}.animate-on-load{opacity:0}.nav__mobile-overlay{opacity:0;visibility:hidden;position:fixed;top:0;left:0;right:0;bottom:0}
   </style>
 
   <!-- Fonts - use optional to prevent CLS from late font swap -->
@@ -58,15 +58,7 @@ Say hi: hello@explicit.studio
         <li><a href="/contact.html">Contact</a></li>
       </ul>
 
-      <button type="button" class="nav__theme-toggle" aria-label="Toggle theme">
-        [mode: <span class="theme-label">light</span>]
-      </button>
-
       <div class="nav__mobile-controls">
-        <button type="button" class="nav__theme-toggle--mobile-header" aria-label="Toggle theme">
-          <svg class="theme-icon theme-icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          <svg class="theme-icon theme-icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
         <button type="button" class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -88,9 +80,6 @@ Say hi: hello@explicit.studio
         <li><a href="/contact.html">Contact</a></li>
       </ul>
       <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1wtjp_n5v_ZNIXswoW9q79hVPraM1Y3chagI-AuDEE30KyKbLwk8WZOZXmsBG_Ep4KbDNxWEPd" class="nav__mobile-cta" target="_blank" rel="noopener noreferrer">[BOOK A CALL]</a>
-      <button class="nav__theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme">
-        [mode: <span class="theme-label">light</span>]
-      </button>
     </div>
   </header>
 
@@ -101,23 +90,23 @@ Say hi: hello@explicit.studio
         <div class="hero__main">
           <div class="hero__text">
             <h1 class="hero__highlight">
-              100,000 startups <span class="easter-egg-die">die</span> each year.
+              100,000 startups die each year.
             </h1>
             <h1 class="hero__highlight hero__highlight--second hero__highlight--more-space">
               Stories live forever.
             </h1>
-            <p class="hero__intro">Explicit is a very good <span class="highlight">storytelling</span> ++ <span class="highlight">brand</span> ++ <span class="highlight">marketing</span> studio working with pre Series-A <span class="highlight">startups</span> to make sure they tell good stories.</p>
+            <p class="hero__intro"><span class="highlight">Explicit</span> does <span class="highlight">storytelling</span> for <span class="highlight">startups</span> to make sure they <span class="highlight">don't die.</span></p>
           </div>
           <div class="hero__slideshow" id="workSlideshow">
             <a href="https://nothing.srijanmahajan.com/" class="hero__slideshow-link">
               <div class="hero__slideshow-track">
-                <img src="assets/images/work/nothing.png" alt="Nothing" class="hero__slide active" data-name="Nothing" data-desc="Explored how Nothing could gain credibility & increase consumer love within the creative community." data-link="https://nothing.srijanmahajan.com/">
-                <img src="assets/images/work/72975e99-af23-467f-b72b-8901537be13a.png" alt="Touching Grass" class="hero__slide" data-name="Touching Grass" data-desc="Owned the moment for 'touching grass' by creating a product that was literally, grass." data-link="/work/touching-grass.html">
-                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzhham50Nzd1Y3plc3AzNXZvOGFhbXV2bWFuZ2N5bXd5bDFpN3V0byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Fqt9bT2nNS8Xi2uHdS/giphy.gif" alt="Pause" class="hero__slide" data-name="Pause" data-desc="Built one of the most loved mental health brands by focussing on relatability & memes instead of mollycoddling." data-link="/work/pause.html">
-                <img src="assets/images/work/0d1a498b-c9a3-4fbe-8c90-c34d7bf0d2c6.png" alt="Huberman Mithaiwale" class="hero__slide" data-name="Huberman Mithaiwale" data-desc="Went viral by creating real protein pedas based on the popular health podcaster." data-link="/work/huberman.html">
-                <img src="assets/images/work/ca508b97-c42a-4d40-b458-e2e6b27fcacc.png" alt="Magic Beans & Insider" class="hero__slide" data-name="Magic Beans & Insider" data-desc="Launched India's top health & wellness community with 400 of the country's most influential people in the field." data-link="/work/magic-beans.html">
+                <img src="assets/images/work/nothing.webp" alt="Nothing" class="hero__slide active" data-name="Nothing" data-desc="Explored how Nothing could gain credibility & increase consumer love within the creative community." data-link="https://nothing.srijanmahajan.com/">
+                <img src="assets/images/work/72975e99-af23-467f-b72b-8901537be13a.webp" alt="Touching Grass" class="hero__slide" data-name="Touching Grass" data-desc="Leveraged tech twitters obsession with 'touching grass' by creating a product that was literally, grass." data-link="/work/touching-grass.html">
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzhham50Nzd1Y3plc3AzNXZvOGFhbXV2bWFuZ2N5bXd5bDFpN3V0byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Fqt9bT2nNS8Xi2uHdS/giphy.gif" alt="Pause" class="hero__slide" data-name="Pause" data-desc="Built a loved mental health brand with >70NPS by creating a narrative of relatability along with compassion." data-link="/work/pause.html">
+                <img src="assets/images/work/0d1a498b-c9a3-4fbe-8c90-c34d7bf0d2c6.webp" alt="Huberman Mithaiwale" class="hero__slide" data-name="Huberman Mithaiwale" data-desc="Created a narrative for protein pedas based on the popular health podcaster. Built the product. Went viral." data-link="/work/huberman.html">
+                <img src="assets/images/work/ca508b97-c42a-4d40-b458-e2e6b27fcacc.webp" alt="Magic Beans & Insider" class="hero__slide" data-name="Magic Beans & Insider" data-desc="Launched India's top health & wellness community with a launch narrative built on magic beans, which went viral." data-link="/work/magic-beans.html">
                 <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2MyajVzOTdheXJmNXhxMW1iNXBzbzk0Z2R5OWhpa2RoMHUxc2pkZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iNFtsuzZ4lXXumjtw4/giphy.gif" alt="Pain & Co" class="hero__slide" data-name="Pain & Co" data-desc="Created a limited drop of mental health merchandise as a sub brand of Pause." data-link="/work/pain-co.html">
-                <img src="assets/images/work/twt.png" alt="The Whole Truth" class="hero__slide" data-name="The Whole Truth" data-desc="Created a guilt-free Diwali mithai campaign for The Whole Truth Foods." data-link="https://twt.srijanmahajan.com/">
+                <img src="assets/images/work/twt.webp" alt="The Whole Truth" class="hero__slide" data-name="The Whole Truth" data-desc="Created a guilt-free Diwali mithai campaign for The Whole Truth Foods." data-link="https://twt.srijanmahajan.com/">
               </div>
             </a>
             <div class="hero__slideshow-caption">
@@ -139,7 +128,8 @@ Say hi: hello@explicit.studio
       <div class="value-prop__content">
         <div class="value-prop__text">
           <h2 class="value-prop__headline">High conviction <span class="highlight">founders</span> turn to <span class="explicit-logo-text">EXPLICIT</span> when failure isn't an option.</h2>
-          <p class="value-prop__subtext">You made a great product. <span class="highlight">Instantly</span> tap into an <span class="highlight">S-tier</span> creative studio to help you tell <span class="highlight">stories that sell</span>.</p>
+          <p class="value-prop__subtext">We are a very good storytelling, brand and marketing studio.</p>
+          <p class="value-prop__subtext">We work with <span class="highlight">early stage startups</span> &amp; help them tell their <span class="highlight">story</span> so they can <span class="highlight">stand out</span> in the sea of sameness.</p>
         </div>
         <div class="value-prop__cta">
           <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1wtjp_n5v_ZNIXswoW9q79hVPraM1Y3chagI-AuDEE30KyKbLwk8WZOZXmsBG_Ep4KbDNxWEPd" class="cta__button hero__cta-below" target="_blank" rel="noopener noreferrer">[BOOK A CALL]</a>
@@ -169,12 +159,10 @@ Say hi: hello@explicit.studio
             <div class="client-card__section">
               <h4 class="client-card__label"><span class="highlight">We deliver that in a 4 week sprint with</span></h4>
               <ul class="client-card__list">
-                <li>Branding</li>
-                <li>Positioning</li>
-                <li>Narrative Architecture</li>
-                <li>Launch Design</li>
-                <li>Landing page</li>
-                <li>Messaging architecture</li>
+                <li>Story, Brand &amp; Positioning</li>
+                <li>Content Strategy &amp; Templates</li>
+                <li>Launch Design &amp; Brand guidelines</li>
+                <li>Narrative &amp; Messaging Architecture</li>
               </ul>
             </div>
             <div class="client-card__section">
@@ -205,7 +193,6 @@ Say hi: hello@explicit.studio
             <div class="client-card__section">
               <h4 class="client-card__label"><span class="highlight">We deliver that with</span></h4>
               <ul class="client-card__list">
-                <li>A 4 week storytelling sprint</li>
                 <li>A content engine (posts, articles, newsletters)</li>
                 <li>Performance marketing layer with advertising creatives</li>
                 <li>Community design</li>
@@ -215,7 +202,6 @@ Say hi: hello@explicit.studio
             <div class="client-card__section">
               <h4 class="client-card__label"><span class="highlight">So you get an outcome with</span></h4>
               <ul class="client-card__list">
-                <li>A demand engine that compounds</li>
                 <li>Faster sales cycles, better conversion</li>
                 <li>More inbound sales &amp; more effective outbound sales</li>
                 <li>Always being part of the cultural narrative, zeitgeist &amp; the news</li>
@@ -274,20 +260,12 @@ Say hi: hello@explicit.studio
           <p class="services__description">How your company looks, speaks &amp; behaves</p>
         </div>
         <div class="services__item">
-          <h3 class="services__title"><span class="highlight">DIGITAL</span></h3>
-          <p class="services__description">Web experiences designed &amp; developed</p>
-        </div>
-        <div class="services__item">
           <h3 class="services__title"><span class="highlight">CONTENT</span></h3>
           <p class="services__description">Content strategy, content retainers, bespoke IP development for podcasts &amp; newsletters</p>
         </div>
         <div class="services__item">
           <h3 class="services__title"><span class="highlight">CAMPAIGNS</span></h3>
           <p class="services__description">Make your product famous &amp; take over the internet with viral campaigns &amp; advertising done like it's supposed to.</p>
-        </div>
-        <div class="services__item">
-          <h3 class="services__title"><span class="highlight">FOUNDER BRAND<br>&amp; STORY</span></h3>
-          <p class="services__description">A cohesive brand linked to your company's story</p>
         </div>
       </div>
       <div class="corporate-joke">
@@ -320,9 +298,9 @@ Say hi: hello@explicit.studio
             <p class="client-card__text">We operate on both models as per your requirements.</p>
             <ul class="client-card__list">
               <li><strong>Fixed scope projects:</strong> Brand sprints, landing page designs &amp; builds, slide decks, and other work that fits into a project based model. We scope in sprint cycles, and run weekly reps to keep the pace constant, and iterative.</li>
-              <li><strong>Ongoing retainers:</strong> We act as your embedded marketing team, working hand in hand with you to ensure your success. This includes:
+              <li><strong>Storytelling Subscription:</strong> We act like an embedded team, working hand in hand with you to ensure your success. This includes:
                 <ul class="client-card__list--no-bullets">
-                  <li>Dedicated marketing lead</li>
+                  <li>Dedicated story &amp; content lead</li>
                   <li>Weekly syncs &amp; reviews</li>
                   <li>Priority support via Slack</li>
                   <li>Flexibility by pausing any time</li>
@@ -388,46 +366,6 @@ Say hi: hello@explicit.studio
       </div>
     </div>
   </footer>
-
-  <!-- Easter Egg: XP Error Modal -->
-  <div class="modal-overlay" id="errorModal">
-    <div class="modal">
-      <div class="modal__header">
-        <span class="modal__icon">⚠️</span>
-        <span class="modal__title">FATAL ERROR</span>
-      </div>
-      <div class="modal__body">
-        <p class="modal__message">Your company has crashed.</p>
-        <p class="modal__submessage">Reason: <span class="highlight">no one gave a shit</span></p>
-      </div>
-      <div class="modal__footer">
-        <button type="button" class="modal__btn modal__btn--ok" id="modalOk">OK</button>
-        <button type="button" class="modal__btn modal__btn--help" id="modalHelp">Get Help</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Easter Egg: Error Sound -->
-  <audio id="errorSound" preload="auto">
-    <source src="assets/sounds/error.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Easter Egg Counter -->
-  <div class="egg-counter" id="eggCounter">[found: 0/5]</div>
-
-  <!-- Easter Egg Popup -->
-  <div class="egg-popup-overlay" id="eggPopup">
-    <div class="egg-popup">
-      <div class="egg-popup-header">> FOUND [0/5]</div>
-      <div class="egg-popup-message"></div>
-      <div class="egg-popup-buttons">
-        <button class="egg-popup-btn" onclick="closeEggPopup()">CONTINUE</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Easter Egg Scripts -->
-  <script src="js/easter-eggs.js"></script>
 
 </body>
 </html>
