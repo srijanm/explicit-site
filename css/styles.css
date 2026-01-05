@@ -2783,6 +2783,32 @@ button:focus-visible {
   }
 }
 
+.value-prop__list {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  list-style: disc;
+  padding-left: 1.25em;
+  margin: 0;
+}
+
+.value-prop__list li {
+  margin-bottom: 0.5em;
+}
+
+.value-prop__list li:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .value-prop__list {
+    font-size: calc(clamp(1rem, 2vw, 1.25rem) + 4px);
+  }
+}
+
 .value-prop__cta {
   margin-top: var(--space-md);
 }
